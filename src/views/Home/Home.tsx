@@ -28,18 +28,7 @@ const Home: React.FC = () => {
         className={
           showSplash ? "content-container" : "content-container active"
         }>
-        {/* <div className="border-frame">
-          <div className="video-container">
-            <video
-              className="border-frame__background-video"
-              autoPlay
-              loop
-              muted
-              playsInline>
-              <source src="/videos/background.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div> */}
+        <div className="border-frame">
           <div className="border-frame__top-left">
             <div
               style={{
