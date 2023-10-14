@@ -1,0 +1,145 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 5px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: transparent;
+  z-index: 1000; 
+  opacity: 0;
+}
+  
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  background-image: url('/Users/vintvgx/Desktop/bandit.studios/studio.code/REACT/portfolio/public/profile.jpeg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-left: 100px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 24px 48px 8px;
+  backdrop-filter: blur(5px); 
+  height: 6vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+  .nav-link {
+    margin: 0 10px;
+  text-decoration: none;
+  color: rgb(0, 0, 0); /* Change text color to white */
+  padding: 5px 10px;
+  font-size: 16px; /* Increased font size */
+  font-weight: normal;
+  font-style: normal;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+ 
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .active-link {
+    background-color: #007BFF;
+    color: white;
+  }
+
+
+ .social-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  gap: 25px;
+  top: 40px;
+  right: 100px;
+  z-index: 1000;
+}
+  
+  .icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: black; 
+    transition: color 0.3s ease-in-out; 
+  }
+  
+  .icon:hover {
+    
+    color: rgb(175, 175, 175);  /* sets the initial color to light gray */
+
+  
+  }
+  
+  .menu-icon {
+    display: none;
+
+    font-size: 24px;
+    
+    z-index: 1001; 
+    cursor: pointer; /* To make it clear it's clickable */
+    font-size: 24px; /* Adjust according to your needs */
+    color: #000; /* Adjust according to your needs */
+    display: none; /* It will be visible only on mobile */
+    align-self: center; /* Align self to center */
+    margin-right: 100px; /* Your requested margin */
+  }
+  
+  .social-icons.open {
+    display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;  /* Adjust according to the exact position */
+  right: 20px;  /* Adjust according to your desired right position */
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1)
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .profile-icon {
+      margin-left: 0;  /* Remove margin */
+    }
+  
+    .menu-icon {
+      display: block;
+      margin-right: 0;  /* Remove margin */
+    }
+  
+    .header {
+      justify-content: space-around;  /* Even spacing */
+    }
+  
+    .nav-links {
+      /* Adjustments for mobile view */
+      position: static;
+      transform: none;
+      /* height: auto; */
+      /* background-color: transparent;
+      box-shadow: none;
+      backdrop-filter: none; */
+    }
+  
+    .social-icons {
+      display: none;  /* Hide by default on mobile */
+    }
+  
+    .social-icons.open {
+      /* Your existing open menu styling */
+      display: flex;
+    }
+  }

@@ -1,13 +1,10 @@
 .container {
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-size: 24px;
-    font-weight: bold;
     position: relative;
-    overflow: hidden;
-    color: white;
+    /* overflow: hidden; */
+
 }
 
 .home-content.active {
@@ -19,40 +16,6 @@
     opacity: 0;
     transition: none;
 }
-
-.content-container {
-    opacity: 0;
-    transition: opacity 1s ease-in-out; }
-
-.content-container.active {
-    opacity: 1; 
-}
-
-.border-frame {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border: .3px solid white;
-    box-sizing: border-box;
-    margin: 40px;
-    z-index: 10;
-    overflow: hidden;
-}
-
-.border-frame__background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    z-index: -1; 
-    filter: blur(5px); 
-}
-
-
 
 .home-content {
     z-index: 11; 
@@ -79,3 +42,34 @@
         left: 15px;  /* Adjust left to 5px for phone view */
     }
 }
+
+
+/* Animation Definitions */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  /* Define other animations, delays as needed */
+  .fade-in-delay-1 {
+    animation-delay: 1s; /* Adjust delay as needed */
+  }
+  
+  .fade-in-delay-2 {
+    animation-delay: 2s; /* Adjust delay as needed */
+  }
+  
+  .fade-in-delay-3 {
+    animation-delay: 3s; /* Adjust delay as needed */
+  }
+  
