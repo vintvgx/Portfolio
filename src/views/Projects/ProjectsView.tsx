@@ -69,7 +69,7 @@ const ProjectsView: React.FC = () => {
     const scrollPositionY = window.scrollY;
     if (scrollPositionY <= 350) {
       return "white"; // Keep white background until 1000px
-    } else if (scrollPositionY >= 1500) {
+    } else if (scrollPositionY >= 1000) {
       return "hsl(0, 0%, 5%)"; // Fully change to hsl(0, 0%, 5%) after 1500px
     } else {
       const opacity = (scrollPositionY - 600) / 700; // Gradually change between 1000px and 1500px
@@ -79,9 +79,6 @@ const ProjectsView: React.FC = () => {
 
   const handleContentScroll = () => {
     const scrollPositionY = window.scrollY;
-
-    // Calculate the opacity based on the scroll position
-    const opacity = Math.min(scrollPositionY / (700 * window.innerHeight), 1);
 
     const newBackgroundColor = calculateBackgroundColor();
     setBackgroundColor(newBackgroundColor);
@@ -141,6 +138,7 @@ const ProjectsView: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

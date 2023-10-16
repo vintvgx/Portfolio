@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai"; // For the Gmail icon
 
 import "./Header.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type HeaderProps = {
   className?: string;
@@ -15,19 +15,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
 
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const activeNavStyle = {
     backgroundColor: "white",
