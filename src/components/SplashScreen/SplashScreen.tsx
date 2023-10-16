@@ -28,6 +28,7 @@ const SplashScreen: React.FC = () => {
           fontSize: "1.8rem",
           fontWeight: "400", // Regular weight for Raleway
           fontFamily: "Raleway, sans-serif", // Ensure the font is applied
+          color: "white",
         }}>
         Kareem Saygbe
       </span>
@@ -37,6 +38,7 @@ const SplashScreen: React.FC = () => {
           marginLeft: "15px",
           fontWeight: "100", // Light weight for Raleway
           fontFamily: "Raleway, sans-serif", // Ensure the font is applied
+          color: "white",
         }}
         className={hidePortfolio ? "fade-out" : ""}>
         Portfolio
