@@ -1,6 +1,6 @@
 [
     {
-      "img_src": "/URBAN.png",
+      "img_src": "/MAC_URBAN.png",
       "gif_src": "/URBAN2.gif",
       "content": [
         {
@@ -22,7 +22,7 @@
       "phone_gif_width": "130%"
     },
     {
-      "img_src": "/COLLECTIONS_FV.png",
+      "img_src": "/FEED_VIEW_COVER.png",
       "gif_src": "/RUBY_COLLECTION.gif",
       "content": [
         {
@@ -42,7 +42,7 @@
           "description": "Check out your own added content anytime."
         }
       ],
-      "cover_width": "20%",
+      "cover_width": "60%",
       "gif_width": "25%",
       "gif_height": "30%",
       "phone_gif_width": "50%"
