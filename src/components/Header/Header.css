@@ -14,7 +14,7 @@
 .profile-icon {
   width: 50px;
   height: 50px;
-  background-image: url('/Users/vintvgx/Desktop/bandit.studios/studio.code/REACT/portfolio/public/profile.jpeg');
+  background-image: url('/public/profile.jpeg');
   background-size: cover;
   background-position: center;
   border-radius: 50%;
