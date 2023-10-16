@@ -14,7 +14,7 @@ const ProjectsView: React.FC = () => {
   const [isSticky, setIsSticky] = useState(false);
 
   const indicatorStyles: React.CSSProperties = isSticky
-    ? { position: "fixed", top: "800px", opacity: 1 }
+    ? { position: "fixed", top: "750px", opacity: 1 }
     : {
         opacity: contentOpacity,
         position: "relative",
@@ -67,9 +67,9 @@ const ProjectsView: React.FC = () => {
 
   const calculateBackgroundColor = () => {
     const scrollPositionY = window.scrollY;
-    if (scrollPositionY <= 350) {
+    if (scrollPositionY <= 300) {
       return "white"; // Keep white background until 1000px
-    } else if (scrollPositionY >= 1000) {
+    } else if (scrollPositionY >= 700) {
       return "hsl(0, 0%, 5%)"; // Fully change to hsl(0, 0%, 5%) after 1500px
     } else {
       const opacity = (scrollPositionY - 600) / 700; // Gradually change between 1000px and 1500px

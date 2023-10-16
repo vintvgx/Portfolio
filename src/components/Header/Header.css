@@ -78,7 +78,6 @@
   .icon {
     font-size: 20px;
     cursor: pointer;
-    color: black; 
     transition: color 0.3s ease-in-out; 
   }
   
