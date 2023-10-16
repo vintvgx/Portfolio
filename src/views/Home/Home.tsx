@@ -48,7 +48,7 @@ const Home: React.FC = () => {
         <>
           <Header className={fadeInHeader ? "fade-in" : ""} />
           <div style={{ flex: 1 }}>
-            {location.pathname === "/Home" && (
+            {location.pathname === "/" && (
               <>
                 <HomeContent
                   className={fadeInHomeContent ? "fade-in fade-in-delay-1" : ""}

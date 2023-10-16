@@ -41,8 +41,8 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       <div className="profile-icon" />
       <div className="nav-links">
         <NavLink
-          to="/Home"
-          style={isActive("/Home") ? activeNavStyle : defaultNavStyle}
+          to="/"
+          style={isActive("/") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
           <p>Home</p>
         </NavLink>
