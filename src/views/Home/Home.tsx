@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./Home.css";
 import SplashScreen from "../../components/SplashScreen/SplashScreen";
+import { useLocation } from "react-router-dom";
 import Menu from "../../components/Menu/Menu";
 import ProjectsView from "../Projects/ProjectsView";
 import AboutView from "../About/AboutView";
@@ -17,6 +18,8 @@ const Home: React.FC = () => {
   const [fadeInHomeContent, setFadeInHomeContent] = useState(false);
   const [fadeInCarousel, setFadeInCarousel] = useState(false);
   const [fadeInFooter, setFadeInFooter] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
     const timerSplash = setTimeout(() => {
@@ -48,12 +51,19 @@ const Home: React.FC = () => {
         <>
           <Header className={fadeInHeader ? "fade-in" : ""} />
           <div style={{ flex: 1, backgroundColor: "white" }}>
-            <HomeContent
-              className={fadeInHomeContent ? "fade-in fade-in-delay-1" : ""}
-            />
-            <Carousel
-              className={fadeInCarousel ? "fade-in fade-in-delay-2" : ""}
-            />
+            {location.pathname === "/Home" && (
+              <>
+                <HomeContent
+                  className={fadeInHomeContent ? "fade-in fade-in-delay-1" : ""}
+                />
+                <Carousel
+                  className={fadeInCarousel ? "fade-in fade-in-delay-2" : ""}
+                />
+              </>
+            )}
+            {location.pathname === "/Projects" && <ProjectsView />}
+            {location.pathname === "/About" && <AboutView />}
+
             <div
               style={{
                 display: "flex",

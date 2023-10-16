@@ -56,19 +56,19 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           to="/Home"
           style={isActive("/Home") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          Home
+          <p>Home</p>
         </NavLink>
         <NavLink
           to="/Projects"
           style={isActive("/Projects") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          Projects
+          <p>Projects</p>
         </NavLink>
         <NavLink
           to="/About"
           style={isActive("/About") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          About
+          <p>About</p>
         </NavLink>
       </div>
       <div

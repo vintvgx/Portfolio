@@ -34,6 +34,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.nav-links p {
+  font-size: 17px; /* Adjust to your preference */
+    font-family: Arial, sans-serif;
+}
   
   .nav-link {
     margin: 0 10px;
@@ -143,3 +148,5 @@
       display: flex;
     }
   }
+
+  

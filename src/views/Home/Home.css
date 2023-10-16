@@ -1,11 +1,4 @@
-.container {
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    /* overflow: hidden; */
 
-}
 
 .home-content.active {
     opacity: 1;
