@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
 import "./Home.css";
 import SplashScreen from "../../components/SplashScreen/SplashScreen";
 import { useLocation } from "react-router-dom";
-import Menu from "../../components/Menu/Menu";
 import ProjectsView from "../Projects/ProjectsView";
 import AboutView from "../About/AboutView";
-import WorkView from "../Work/WorkView";
 import Header from "../../components/Header/Header";
 import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer/Footer";
