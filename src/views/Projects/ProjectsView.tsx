@@ -10,6 +10,7 @@ const ProjectsView: React.FC = () => {
   const [contentOpacity, setContentOpacity] = useState(1);
   const isMobile = window.innerWidth < 768;
   const contentWrapperRef = useRef<HTMLDivElement | null>(null);
+  const [backgroundColor, setBackgroundColor] = useState("white"); // Initialize with the starting color
   const [isSticky, setIsSticky] = useState(false);
 
   const indicatorStyles: React.CSSProperties = isSticky
@@ -64,8 +65,26 @@ const ProjectsView: React.FC = () => {
     }
   };
 
+  const calculateBackgroundColor = () => {
+    const scrollPositionY = window.scrollY;
+    if (scrollPositionY <= 350) {
+      return "white"; // Keep white background until 1000px
+    } else if (scrollPositionY >= 1500) {
+      return "hsl(0, 0%, 5%)"; // Fully change to hsl(0, 0%, 5%) after 1500px
+    } else {
+      const opacity = (scrollPositionY - 600) / 700; // Gradually change between 1000px and 1500px
+      return `hsla(0, 0%, 5%, ${opacity})`;
+    }
+  };
+
   const handleContentScroll = () => {
     const scrollPositionY = window.scrollY;
+
+    // Calculate the opacity based on the scroll position
+    const opacity = Math.min(scrollPositionY / (700 * window.innerHeight), 1);
+
+    const newBackgroundColor = calculateBackgroundColor();
+    setBackgroundColor(newBackgroundColor);
 
     // Set sticky when scrollY crosses a threshold
     setIsSticky(scrollPositionY >= 500);
@@ -117,6 +136,7 @@ const ProjectsView: React.FC = () => {
       setContentOpacity(newContentOpacity);
     };
 
+    console.log(backgroundColor);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -156,7 +176,9 @@ const ProjectsView: React.FC = () => {
   }, []);
 
   return (
-    <div className="projects-container">
+    <div
+      className="projects-container"
+      style={{ backgroundColor: backgroundColor }}>
       <div className="proj-container">
         <img
           src={project_data[currentIndex].img_src}
