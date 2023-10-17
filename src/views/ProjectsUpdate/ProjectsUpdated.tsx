@@ -5,67 +5,83 @@ import "./ProjectsUpdated.css";
 const ProjectsUpdated: React.FC = () => {
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
   const handleImageClick = (index: number) => {
-    console.log(
-      "🚀 ~ file: ProjectsUpdated.tsx:30 ~ handleImageClick ~ e:",
-      index
-    );
-
+    console.log("CLICK PRESSED");
     if (imageContainerRef.current) {
+      console.log("CURRENT");
       const imageWrapper = imageContainerRef.current.children[
         index
       ] as HTMLDivElement;
       if (imageWrapper) {
-        // Calculate the scrollLeft position based on the clicked index
-        const containerWidth = imageContainerRef.current.offsetWidth;
-        const imageWidth = imageWrapper.offsetWidth;
-        const scrollLeft =
-          imageWrapper.offsetLeft - (containerWidth - imageWidth) / 2;
-
-        // Ensure scrollLeft is not negative
-        const validScrollLeft = Math.max(scrollLeft, 0);
-
-        // Animate scrolling to the selected image
-        imageContainerRef.current.scrollTo({
-          left: validScrollLeft,
-          behavior: "smooth",
-        });
-
-        // Show the text elements for the current index
-        const textElements = imageWrapper.querySelectorAll(".image-text");
-        textElements.forEach((element) => {
-          element.classList.add("show");
-        });
-
-        // Update the current index
+        // Set the current index
         setCurrentIndex(index);
+        console.log(
+          "🚀 ~ file: ProjectsUpdated.tsx:20 ~ handleImageClick ~ index:",
+          index
+        );
+
+        // Open the modal
+        setIsModalOpen(true);
+        console.log(isModalOpen);
       }
     }
   };
 
+  const closeModal = () => {
+    // Close the modal
+    setIsModalOpen(false);
+  };
+
   return (
-    <div style={imageContainerStyle} ref={imageContainerRef}>
-      {/* Add empty div to create space on the left */}
-      <div style={{ flex: "0 0 auto", width: "50%" }}></div>
-      {jsonData.map((item, index) => (
-        <div
-          key={index}
-          style={imageWrapperStyle(index)}
-          onClick={() => handleImageClick(index + 1)}>
-          <img
-            src={item.img_src}
-            alt=""
-            style={{
-              width: item.cover_update_width,
-              display: "block",
-              margin: "0 auto",
-            }}
-          />
+    <div style={{ height: "auto" }}>
+      {/* Container for image wrapper divs */}
+      <div style={imageContainerStyle} ref={imageContainerRef}>
+        {/* Add empty div to create space on the left */}
+        <div style={{ flex: "0 0 auto", width: "50%" }}></div>
+        {jsonData.map((item, index) => (
+          <div
+            key={index}
+            style={imageWrapperStyle(index)}
+            onClick={() => handleImageClick(index + 1)}>
+            <img
+              src={item.img_src}
+              alt=""
+              style={{
+                width: item.cover_update_width,
+                display: "block",
+                margin: "0 auto",
+                cursor: "pointer",
+              }}
+            />
+          </div>
+        ))}
+        {/* Add empty div to create space on the right */}
+        <div style={{ flex: "0 0 auto", width: "50%" }}></div>
+      </div>
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+            {currentIndex !== null && (
+              <img
+                src={jsonData[currentIndex - 1].img_src} // Subtract 1 because the index is 1-based
+                alt=""
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                  display: "block",
+                  margin: "0 auto",
+                }}
+              />
+            )}
+          </div>
         </div>
-      ))}
-      {/* Add empty div to create space on the right */}
-      <div style={{ flex: "0 0 auto", width: "50%" }}></div>
+      )}
     </div>
   );
 };
@@ -77,7 +93,7 @@ const imageContainerStyle: React.CSSProperties = {
   flexDirection: "row",
   overflowX: "scroll", // Enable horizontal scrolling
   gap: "20px", // 40px spacing between images
-  height: "100vh",
+  height: "85vh",
   alignItems: "center", // Center vertically
   scrollSnapType: "x mandatory", // Enable snapping
 };

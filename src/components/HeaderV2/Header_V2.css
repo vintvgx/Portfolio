@@ -19,7 +19,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    margin-left: 10%; /* Adjust margin as needed */
+    margin-left: 100px; 
     position: relative;
   }
   
@@ -47,21 +47,47 @@
   font-style: normal;
   }
 
+
+
   .contact-link p {
     cursor: pointer;
   }
 
   .social-icons {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  /* position: fixed; */
+  gap: 25px;
+  top: 40px;
+  right: 100px;
+  z-index: 1000;
+}
+
+   .social-icons.open {
     display: flex;
   flex-direction: row;
   position: absolute;
   top: 50px;  /* Adjust according to the exact position */
-  right: 0px;
+  right: 0px;  /* Adjust according to your desired right position */
   background-color: white;
   border-radius: 5px;
   padding: 15px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-  gap: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1)
+  }
+
+   .menu-icon {
+    display: none;
+    font-size: 24px;
+    z-index: 1001; 
+    cursor: pointer; /* To make it clear it's clickable */
+    font-size: 20px; /* Adjust according to your needs */
+    color: #000; /* Adjust according to your needs */
+    display: none; /* It will be visible only on mobile */
+    align-self: center; /* Align self to center */
+   
   }
   
   .icon {
@@ -82,4 +108,17 @@
         flex-direction: column;
         right: 5px
       }
+
+      .menu-icon {
+      display: block;
+      margin-right: 0;  /* Remove margin */
+    }
+
+      .profile-icon {
+        margin-left: 10px;
+      }
+
+      .social-icons {
+      display: none;  /* Hide by default on mobile */
+    }
   }

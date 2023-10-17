@@ -36,8 +36,6 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
     color: "black",
   };
 
-  const iconColor = backgroundColor === "white" ? "black" : "white";
-
   return (
     <div className={`header ${className}`}>
       {" "}
@@ -65,13 +63,13 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
       <div
         className={`menu-icon ${isMobileMenuOpen ? "open" : ""}`}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-        <FaBars color={iconColor} />
+        <FaBars color={"black"} />
       </div>
       <div className={`social-icons ${isMobileMenuOpen ? "open" : ""}`}>
-        <AiFillMail className="icon" color={iconColor} />
-        <FaGithub className="icon" color={iconColor} />
-        <FaLinkedin className="icon" color={iconColor} />
-        <FaTwitter className="icon" color={iconColor} />
+        <AiFillMail className="icon" color={"black"} />
+        <FaGithub className="icon" color={"black"} />
+        <FaLinkedin className="icon" color={"black"} />
+        <FaTwitter className="icon" color={"black"} />
       </div>
     </div>
   );

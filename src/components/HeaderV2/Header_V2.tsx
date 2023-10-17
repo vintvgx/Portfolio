@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiFillMail } from "react-icons/ai";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaBars, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Header_V2.css";
 
@@ -13,6 +13,7 @@ const Header_V2: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
   const [isSocialDropdownOpen, setSocialDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const activeNavStyle = {
     color: "black",
@@ -58,35 +59,23 @@ const Header_V2: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
           <p>About</p>
         </NavLink>
 
-        {/* Contact link with a click handler to toggle the social links dropdown */}
         <div
-          className={`nav-link contact-link ${
-            isSocialDropdownOpen ? "active" : ""
-          }`}
-          onClick={toggleSocialDropdown}>
-          <p>Contact</p>
-          {isSocialDropdownOpen && (
-            <div className="social-icons">
-              <a href="mailto:kareems0108@gmail.com" className="icon-link">
-                <AiFillMail className="icon" color={iconColor} />
-              </a>{" "}
-              <a
-                href="https://github.com/vintvgx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon-link">
-                <FaGithub className="icon" color={iconColor} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kareem-saygbe-63b82a1b4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon-link">
-                <FaLinkedin className="icon" color={iconColor} />
-              </a>
-              <FaTwitter className="icon" color={iconColor} />
-            </div>
-          )}
+          className={`menu-icon ${isMobileMenuOpen ? "open" : ""}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <FaBars
+            style={{
+              color: "rgba(145, 145, 145, 0.856)",
+              marginLeft: "10px",
+              marginTop: "2px",
+            }}
+            color={"black"}
+          />
+        </div>
+        <div className={`social-icons ${isMobileMenuOpen ? "open" : ""}`}>
+          <AiFillMail className="icon" color={"black"} />
+          <FaGithub className="icon" color={"black"} />
+          <FaLinkedin className="icon" color={"black"} />
+          <FaTwitter className="icon" color={"black"} />
         </div>
       </div>
     </div>
