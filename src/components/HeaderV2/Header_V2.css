@@ -1,0 +1,85 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 5px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: transparent;
+    z-index: 1000;
+    opacity: 1;
+  }
+  
+  .profile-icon {
+    flex: 0 0 auto;
+    width: 50px;
+    height: 50px;
+    background-image: url('/public/profile.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-left: 10%; /* Adjust margin as needed */
+    position: relative;
+  }
+  
+  .nav-links {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end; /* Position navigation links at the end (right) */
+    align-items: center;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    /* border-radius: 50px; */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 24px 48px 8px; */
+    height: 6vh;
+    position: relative;
+    margin-right: 10%;
+  /* top: 50%;
+  left: 80%; */
+  }
+
+  .nav-link {
+    margin: 0 10px;
+  text-decoration: none;
+  color: rgba(145, 145, 145, 0.856); /* Change text color to white */
+  font-size: 12px; /* Increased font size */
+  font-weight: normal;
+  font-style: normal;
+  }
+
+  .contact-link p {
+    cursor: pointer;
+  }
+
+  .social-icons {
+    display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 50px;  /* Adjust according to the exact position */
+  right: 0px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out; 
+  }
+  
+  .icon:hover {
+    
+    color: rgb(175, 175, 175);  /* sets the initial color to light gray */
+
+  
+  }
+
+  @media only screen and (max-width: 768px) {
+      .social-icons {
+        flex-direction: column;
+        right: 5px
+      }
+  }

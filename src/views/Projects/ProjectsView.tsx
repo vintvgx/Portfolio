@@ -10,6 +10,7 @@ const ProjectsView: React.FC = () => {
   const [contentOpacity, setContentOpacity] = useState(1);
   const isMobile = window.innerWidth < 768;
   const contentWrapperRef = useRef<HTMLDivElement | null>(null);
+  const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const [backgroundColor, setBackgroundColor] = useState("white"); // Initialize with the starting color
   const [isSticky, setIsSticky] = useState(false);
 
@@ -42,6 +43,31 @@ const ProjectsView: React.FC = () => {
   const goRight = () => {
     setCurrentIndex((prev) => (prev + 1) % project_data.length);
     setActiveTitleIndex(0);
+  };
+
+  const handleImageClick = (index: number) => {
+    console.log(index);
+    if (imageContainerRef.current) {
+      const imageWrapper = imageContainerRef.current.children[
+        index
+      ] as HTMLDivElement;
+      if (imageWrapper) {
+        // Calculate the scrollLeft position to center the selected image
+        const containerWidth = imageContainerRef.current.clientWidth;
+        const imageWidth = imageWrapper.clientWidth;
+        let scrollLeft =
+          imageWrapper.offsetLeft - (containerWidth - imageWidth) / 2;
+
+        // Ensure scrollLeft is not negative
+        scrollLeft = Math.max(scrollLeft, 0);
+
+        // Animate scrolling to the selected image
+        imageContainerRef.current.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth",
+        });
+      }
+    }
   };
 
   const handleIndicatorClick = (index: number) => {
@@ -177,7 +203,7 @@ const ProjectsView: React.FC = () => {
     <div
       className="projects-container"
       style={{ backgroundColor: backgroundColor }}>
-      <div className="proj-container">
+      {/* <div className="proj-container">
         <img
           src={project_data[currentIndex].img_src}
           alt={project_data[currentIndex].content[activeTitleIndex].title}
@@ -186,6 +212,28 @@ const ProjectsView: React.FC = () => {
             opacity: opacity,
           }}
         />
+      </div> */}
+      <div style={imageContainerStyle} ref={imageContainerRef}>
+        {/* Add empty div to create space on the left */}
+        <div style={{ flex: "0 0 auto", width: "50%" }}></div>
+        {project_data.map((item, index) => (
+          <div
+            key={index}
+            style={imageWrapperStyle(index)}
+            onClick={() => handleImageClick(index)}>
+            <img
+              src={item.img_src}
+              alt=""
+              style={{
+                width: item.cover_update_width,
+                display: "block",
+                margin: "0 auto",
+              }}
+            />
+          </div>
+        ))}
+        {/* Add empty div to create space on the right */}
+        <div style={{ flex: "0 0 auto", width: "50%" }}></div>
       </div>
       <div className="content-wrapper" ref={contentWrapperRef}>
         <div className="proj-content">
@@ -247,3 +295,20 @@ const ProjectsView: React.FC = () => {
 };
 
 export default ProjectsView;
+
+const imageContainerStyle: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "row",
+  overflowX: "scroll", // Enable horizontal scrolling
+  gap: "20px", // 40px spacing between images
+  height: "100vh",
+  alignItems: "center", // Center vertically
+  scrollSnapType: "x mandatory", // Enable snapping
+};
+
+const imageWrapperStyle = (index: number): React.CSSProperties => ({
+  flex: "0 0 auto",
+  width: "50%",
+  textAlign: "center", // Center content horizontally
+  scrollSnapAlign: "center", // Center the image when snapping
+});
