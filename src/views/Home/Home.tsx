@@ -5,7 +5,7 @@ import SplashScreen from "../../components/SplashScreen/SplashScreen";
 import { useLocation } from "react-router-dom";
 // import ProjectsView from "../Projects/ProjectsView";
 import AboutView from "../About/AboutView";
-import Header from "../../components/Header/Header";
+// import Header from "../../components/Header/Header";
 import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer/Footer";
 import HomeContent from "../../components/HomeContent/HomeContent";

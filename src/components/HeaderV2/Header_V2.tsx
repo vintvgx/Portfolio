@@ -12,7 +12,6 @@ type HeaderProps = {
 const Header_V2: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
-  const [isSocialDropdownOpen, setSocialDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const activeNavStyle = {
@@ -27,14 +26,6 @@ const Header_V2: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
     backgroundColor: "transparent",
     color: "rgba(145, 145, 145, 0.856)",
   };
-
-  // Function to toggle the social links dropdown
-  const toggleSocialDropdown = () => {
-    setSocialDropdownOpen(!isSocialDropdownOpen);
-  };
-
-  // Define the icon color for social links
-  const iconColor = "black"; // You can customize the color
 
   return (
     <div className="header">
