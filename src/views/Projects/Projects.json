@@ -1,6 +1,6 @@
 [
     {
-      "img_src": "/URBAN.png",
+      "img_src": "/MAC_URBAN.png",
       "gif_src": "/URBAN2.gif",
       "content": [
         {
@@ -17,12 +17,13 @@
         }
       ],
       "cover_width": "50%",
+      "cover_update_width": "100%",
       "gif_width": "50%",
       "gif_height": "30%",
       "phone_gif_width": "130%"
     },
     {
-      "img_src": "/COLLECTIONS_FV.png",
+      "img_src": "/FEED_VIEW_COVER.png",
       "gif_src": "/RUBY_COLLECTION.gif",
       "content": [
         {
@@ -42,10 +43,34 @@
           "description": "Check out your own added content anytime."
         }
       ],
-      "cover_width": "20%",
+      "cover_width": "60%",
+      "cover_update_width": "60%",
       "gif_width": "25%",
       "gif_height": "30%",
       "phone_gif_width": "50%"
+    },
+    {
+      "img_src": "/MAC_URBAN.png",
+      "gif_src": "/URBAN2.gif",
+      "content": [
+        {
+          "title": "URBAN AI",
+          "description": "Experience the future of urban planning with AI."
+        },
+        {
+          "title": "CHAT BOT RESPONSES",
+          "description": "See how chatbots can enhance user interactions."
+        },
+        {
+          "title": "SAVED CHAT HISTORY",
+          "description": "Retrieve your chats anytime, anywhere."
+        }
+      ],
+      "cover_width": "50%",
+      "cover_update_width": "100%",
+      "gif_width": "50%",
+      "gif_height": "30%",
+      "phone_gif_width": "130%"
     }
   ]
   

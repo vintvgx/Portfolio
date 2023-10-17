@@ -2,7 +2,54 @@
     background-color: #ffffff; /* You can choose your desired color */
     padding: 10px 0;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     width: 100%;
-    color: black;
+    font-family: Arial, sans-serif;
+    
+    color: #666;
+}
+
+.leftSelection {
+    text-align: left;
+    margin-left: 100px;
+}
+
+.rightSelection {
+    text-align: right;
+    margin-right: 100px;
+}
+
+/* Style the centerSelection with the icons */
+.centerSelection {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Set the gap between icons */
+    margin-top: 5px;
+  }
+  
+  /* Style the icons */
+  .icon {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    color:#666
+  }
+  
+  .icon:hover {
+    color: rgb(0, 0, 0); /* Sets the initial color to light gray */
+  }
+
+@media only screen and (max-width: 768px) {
+    .leftSelection {
+       
+        margin-left: 10px;
+    }
+    
+    .rightSelection {
+       
+        margin-right: 10px;
+    }
+
+    .centerSelection {
+        display: none;
+    }
 }

@@ -1,4 +1,14 @@
+/* Add this CSS to ensure a minimum height for your content area */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+/* Adjust the margin-top for the footer to provide space above it */
+.footer {
+  margin-top: auto;
+}
 
 .home-content.active {
     opacity: 1;

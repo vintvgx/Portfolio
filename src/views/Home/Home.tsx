@@ -1,13 +1,16 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import SplashScreen from "../../components/SplashScreen/SplashScreen";
 import { useLocation } from "react-router-dom";
-import ProjectsView from "../Projects/ProjectsView";
+// import ProjectsView from "../Projects/ProjectsView";
 import AboutView from "../About/AboutView";
-import Header from "../../components/Header/Header";
+// import Header from "../../components/Header/Header";
 import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer/Footer";
 import HomeContent from "../../components/HomeContent/HomeContent";
+import ProjectsUpdated from "../ProjectsUpdate/ProjectsUpdated";
+import Header_v2 from "../../components/HeaderV2/Header_V2";
 
 const Home: React.FC = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -46,7 +49,8 @@ const Home: React.FC = () => {
         <SplashScreen />
       ) : (
         <>
-          <Header className={fadeInHeader ? "fade-in" : ""} />
+          {/* <Header className={fadeInHeader ? "fade-in" : ""} /> */}
+          <Header_v2 className={fadeInHeader ? "fade-in" : ""} />
           <div style={{ flex: 1 }}>
             {location.pathname === "/" && (
               <>
@@ -58,7 +62,7 @@ const Home: React.FC = () => {
                 />
               </>
             )}
-            {location.pathname === "/Projects" && <ProjectsView />}
+            {location.pathname === "/Projects" && <ProjectsUpdated />}
             {location.pathname === "/About" && <AboutView />}
 
             <div

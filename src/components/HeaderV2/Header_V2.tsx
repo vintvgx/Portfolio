@@ -1,31 +1,22 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { AiFillMail } from "react-icons/ai";
+import { FaBars, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { NavLink, useLocation } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { AiFillMail } from "react-icons/ai"; // For the Gmail icon
-
-import "./Header.css";
-import { useState } from "react";
+import "./Header_V2.css";
 
 type HeaderProps = {
   className?: string;
   backgroundColor?: string;
 };
 
-const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
+const Header_V2: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const activeNavStyle = {
-    backgroundColor: "white",
     color: "black",
-    // padding: "15px 20px",
     borderRadius: "40px",
-    boxShadow: "rgba(0, 0, 0, 0.1) 0px 8px 16px 0px",
-    width: "90px",
-    height: "40px",
     display: "flex",
     alignItems: "center",
     placeContent: "center",
@@ -33,12 +24,11 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
 
   const defaultNavStyle = {
     backgroundColor: "transparent",
-    color: "black",
+    color: "rgba(145, 145, 145, 0.856)",
   };
 
   return (
-    <div className={`header ${className}`}>
-      {" "}
+    <div className="header">
       <div className="profile-icon" />
       <div className="nav-links">
         <NavLink
@@ -59,20 +49,28 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
           className="nav-link">
           <p>About</p>
         </NavLink>
-      </div>
-      <div
-        className={`menu-icon ${isMobileMenuOpen ? "open" : ""}`}
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-        <FaBars color={"black"} />
-      </div>
-      <div className={`social-icons ${isMobileMenuOpen ? "open" : ""}`}>
-        <AiFillMail className="icon" color={"black"} />
-        <FaGithub className="icon" color={"black"} />
-        <FaLinkedin className="icon" color={"black"} />
-        <FaTwitter className="icon" color={"black"} />
+
+        <div
+          className={`menu-icon ${isMobileMenuOpen ? "open" : ""}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <FaBars
+            style={{
+              color: "rgba(145, 145, 145, 0.856)",
+              marginLeft: "10px",
+              marginTop: "2px",
+            }}
+            color={"black"}
+          />
+        </div>
+        <div className={`social-icons ${isMobileMenuOpen ? "open" : ""}`}>
+          <AiFillMail className="icon" color={"black"} />
+          <FaGithub className="icon" color={"black"} />
+          <FaLinkedin className="icon" color={"black"} />
+          <FaTwitter className="icon" color={"black"} />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default Header_V2;
