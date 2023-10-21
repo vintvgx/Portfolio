@@ -34,54 +34,70 @@ const ProjectsUpdated: React.FC = () => {
     setIsModalOpen(false);
   };
 
+  // return (
+  //   <div style={{ height: "auto" }}>
+  //     {/* Container for image wrapper divs */}
+  //     <div style={imageContainerStyle} ref={imageContainerRef}>
+  //       {/* Add empty div to create space on the left */}
+  //       <div style={{ flex: "0 0 auto", width: "30%" }}>
+  //         <h1>URBAN.AI</h1>
+  //       </div>
+  //       {jsonData.map((item, index) => (
+  //         <div
+  //           key={index}
+  //           style={imageWrapperStyle(index)}
+  //           onClick={() => handleImageClick(index + 1)}>
+  //           <img
+  //             src={item.img_src}
+  //             alt=""
+  //             style={{
+  //               width: item.cover_update_width,
+  //               display: "block",
+  //               margin: "0 auto",
+  //               cursor: "pointer",
+  //             }}
+  //           />
+  //         </div>
+  //       ))}
+  //       {/* Add empty div to create space on the right */}
+  //       <div style={{ flex: "0 0 auto", width: "50%" }}></div>
+  //     </div>
+  //     {/* Modal */}
+  //     {isModalOpen && (
+  //       <div className="modal">
+  //         <div className="modal-content">
+  //           <span className="close" onClick={closeModal}>
+  //             &times;
+  //           </span>
+  //           {currentIndex !== null && (
+  //             <img
+  //               src={jsonData[currentIndex - 1].img_src} // Subtract 1 because the index is 1-based
+  //               alt=""
+  //               style={{
+  //                 maxWidth: "100%",
+  //                 maxHeight: "100%",
+  //                 display: "block",
+  //                 margin: "0 auto",
+  //               }}
+  //             />
+  //           )}
+  //         </div>
+  //       </div>
+  //     )}
+  //   </div>
+  // );
+
   return (
-    <div style={{ height: "auto" }}>
-      {/* Container for image wrapper divs */}
-      <div style={imageContainerStyle} ref={imageContainerRef}>
-        {/* Add empty div to create space on the left */}
-        <div style={{ flex: "0 0 auto", width: "50%" }}></div>
-        {jsonData.map((item, index) => (
-          <div
-            key={index}
-            style={imageWrapperStyle(index)}
-            onClick={() => handleImageClick(index + 1)}>
-            <img
-              src={item.img_src}
-              alt=""
-              style={{
-                width: item.cover_update_width,
-                display: "block",
-                margin: "0 auto",
-                cursor: "pointer",
-              }}
-            />
-          </div>
-        ))}
-        {/* Add empty div to create space on the right */}
-        <div style={{ flex: "0 0 auto", width: "50%" }}></div>
+    <div>
+      <div
+        style={{
+          width: "100vw",
+          height: "40vh",
+          backgroundColor: "red",
+          padding: "50px",
+        }}>
+        <span>Projects.</span>
       </div>
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>
-              &times;
-            </span>
-            {currentIndex !== null && (
-              <img
-                src={jsonData[currentIndex - 1].img_src} // Subtract 1 because the index is 1-based
-                alt=""
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
-                  display: "block",
-                  margin: "0 auto",
-                }}
-              />
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 };
