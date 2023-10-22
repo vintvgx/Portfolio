@@ -1,0 +1,78 @@
+[
+    {
+        "title": "URBAN.ai",
+        "subtitle": "MERN Application",
+        "description": "Urban ai is a fun and interactive chatbot that bridges the gap between technology and street culture. Designed to engage users in a unique way, it responds to queries and conversations using the vibrant and dynamic language of urban slang through chat-gpt-4.",
+        "website": "https://urbanai.info",
+        "github": "https://github.com/vintvgx/Urban.ai",
+        "Features": [
+            "Responsive Design", 
+            "AI Driven Conversations", 
+            "Firebase hosting & User Authentication", 
+            "Light/Dark theme", 
+            "Deployed using Google Cloud Run"
+        ],
+        "Technologies": [
+            "REACT",
+            "EXPRESS",
+            "MONGODB",
+            "Firebase",
+            "Docker",
+            "GCR",
+            "REDUX",
+            "STACK AI"
+        ],
+        "images": {
+        
+                "cover_image": "URBAN COVER",
+                "cover_alt": "URBAN",
+                "cover_src": "/MAC_URBAN.png",
+                "gif_image": "URBAN GIF",
+                "gif_alt": "URBAN VIDEO",
+                "gif_src": "/URBAN2.gif"
+            
+        },
+        "styles": {
+            "backgroundColor": "black",
+            "color": "white",
+            "width": "100%",
+            "height": "100px"
+        }
+    },
+    {
+        "title": "COLLECTIONS",
+        "subtitle": "React Native",
+        "description": "COLLECTIONS is a dynamic React Native application designed for sharing media. Users can effortlessly share their cherished images and videos, creating a zine of memories. Navigate through a curated feed filled with shared moments, with the intuitive functionality of Create, Read, Update and Delete. From breathaking adventures to anyday snapshots, Collections is the styles for your stories.",
+        "website": "exp://u.expo.dev/update/28a0e6d3-52c2-4534-ac1d-3a640247f357",
+        "github": "https://github.com/vintvgx/COLLECTIONS",
+        "Features": [
+            "View Collections through Feed", 
+            "Firebase User Authentication", 
+            "Video and Image enabled", 
+            "CRUD operations"
+        ],
+        "Technologies": [
+            "REACT",
+            "EXPO",
+            "NODE JS",
+            "Firebase",
+            "Typescript",
+            "REDUX"
+        ],
+        "images": {
+                "cover_image": "COLLECTIONS COVER",
+                "cover_alt": "COLLECTIONS",
+                "cover_src":  "/COLL-COVER_1.png",  
+                "gif_image": "COLLECTIONS GIF",
+                "gif_alt": "COLLECTIONS VIDEO",
+                "gif_src": "/RUBY_COLLECTION.gif"
+            
+        },
+        "styles": {
+            "backgroundColor": "white",
+            "color": "black",
+            "width": "35%",
+            "height": "100px"
+        }
+    }
+]

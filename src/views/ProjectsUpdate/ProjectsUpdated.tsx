@@ -1,106 +1,115 @@
-import React, { useRef, useState } from "react";
-import jsonData from "../Projects/Projects.json"; // Import JSON data
+import React, { useState } from "react";
 import "./ProjectsUpdated.css";
+import projects from "./ProjectsUpdate.json";
+import ProjectModalView from "../../components/ProjectModal/ProjectModal";
 
 const ProjectsUpdated: React.FC = () => {
-  const imageContainerRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalTransitionState, setModalTransitionState] = useState<
+    "inactive" | "entering" | "active" | "exiting"
+  >("inactive");
 
   const handleImageClick = (index: number) => {
-    console.log("CLICK PRESSED");
-    if (imageContainerRef.current) {
-      console.log("CURRENT");
-      const imageWrapper = imageContainerRef.current.children[
-        index
-      ] as HTMLDivElement;
-      if (imageWrapper) {
-        // Set the current index
-        setCurrentIndex(index);
-        console.log(
-          "🚀 ~ file: ProjectsUpdated.tsx:20 ~ handleImageClick ~ index:",
-          index
-        );
+    setCurrentIndex(index);
+    setModalTransitionState("entering");
 
-        // Open the modal
-        setIsModalOpen(true);
-        console.log(isModalOpen);
-      }
-    }
+    setTimeout(() => {
+      setIsModalOpen(true);
+      setModalTransitionState("active");
+    }, 100);
   };
 
   const closeModal = () => {
-    // Close the modal
-    setIsModalOpen(false);
+    setModalTransitionState("exiting");
+
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setModalTransitionState("inactive");
+    }, 500);
   };
 
   return (
-    <div style={{ height: "auto" }}>
-      {/* Container for image wrapper divs */}
-      <div style={imageContainerStyle} ref={imageContainerRef}>
-        {/* Add empty div to create space on the left */}
-        <div style={{ flex: "0 0 auto", width: "50%" }}></div>
-        {jsonData.map((item, index) => (
-          <div
-            key={index}
-            style={imageWrapperStyle(index)}
-            onClick={() => handleImageClick(index + 1)}>
-            <img
-              src={item.img_src}
-              alt=""
-              style={{
-                width: item.cover_update_width,
-                display: "block",
-                margin: "0 auto",
-                cursor: "pointer",
-              }}
-            />
-          </div>
-        ))}
-        {/* Add empty div to create space on the right */}
-        <div style={{ flex: "0 0 auto", width: "50%" }}></div>
+    <div style={{ flex: 1, overflowX: "hidden" }}>
+      <div
+        style={{
+          width: "100%",
+          height: "20vh",
+          padding: "50px",
+          position: "relative",
+        }}>
+        <span
+          style={{
+            position: "absolute",
+            bottom: "50px",
+            left: "300px",
+            fontSize: "3rem",
+            fontWeight: "400",
+          }}>
+          Projects.
+        </span>
       </div>
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>
-              &times;
-            </span>
-            {currentIndex !== null && (
-              <img
-                src={jsonData[currentIndex - 1].img_src} // Subtract 1 because the index is 1-based
-                alt=""
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
-                  display: "block",
-                  margin: "0 auto",
-                }}
-              />
-            )}
+      {projects.map((project, index) => (
+        <div
+          className="project-card"
+          key={project.title}
+          onClick={() => handleImageClick(index)}
+          style={{
+            width: "90vw",
+            height: "50vh",
+            backgroundColor: project.styles?.backgroundColor || "white",
+            color: project.styles?.color || "black",
+            margin: "40px auto",
+            borderRadius: "15px",
+            boxShadow: "0px 5px 15px rgba(0,0,0,0.3)",
+            backgroundImage: `url(${project.images.gif_src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            cursor: "pointer",
+            position: "relative", // Added for positioning the overlay
+          }}>
+          {/* Dark overlay at the bottom */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "50%", // Adjust this if needed
+              background:
+                "linear-gradient(to top, rgba(0, 0, 0, 1) 50px, transparent)",
+              padding: "10px 20px",
+              color: "white", // Assuming white text for visibility
+              textAlign: "left", // Aligning text to the left
+            }}>
+            <h1>{project.title}</h1>
+            <h2>{project.subtitle}</h2>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px",
+              }}>
+              {project.Technologies.map((tech) => (
+                <span key={tech} className="technology-item">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
+      ))}
+
+      <div className={isModalOpen ? "overlay" : ""}></div>
+      {isModalOpen && currentIndex !== null && (
+        <ProjectModalView
+          project={projects[currentIndex]}
+          close={closeModal}
+          className={`modal-container ${modalTransitionState}`}
+        />
       )}
     </div>
   );
 };
 
 export default ProjectsUpdated;
-
-const imageContainerStyle: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "row",
-  overflowX: "scroll", // Enable horizontal scrolling
-  gap: "20px", // 40px spacing between images
-  height: "85vh",
-  alignItems: "center", // Center vertically
-  scrollSnapType: "x mandatory", // Enable snapping
-};
-
-const imageWrapperStyle = (index: number): React.CSSProperties => ({
-  flex: "0 0 auto",
-  width: "50%",
-  textAlign: "center", // Center content horizontally
-  scrollSnapAlign: "center", // Center the image when snapping
-});

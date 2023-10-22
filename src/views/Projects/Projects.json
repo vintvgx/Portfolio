@@ -1,6 +1,6 @@
 [
     {
-      "img_src": "/MAC_URBAN.png",
+      "img_src": "/COVER_2.png",
       "gif_src": "/URBAN2.gif",
       "content": [
         {
@@ -17,13 +17,13 @@
         }
       ],
       "cover_width": "50%",
-      "cover_update_width": "100%",
+      "cover_update_width": "120%",
       "gif_width": "50%",
       "gif_height": "30%",
       "phone_gif_width": "130%"
     },
     {
-      "img_src": "/FEED_VIEW_COVER.png",
+      "img_src": "/COLL-COVER_1.png",
       "gif_src": "/RUBY_COLLECTION.gif",
       "content": [
         {
@@ -44,7 +44,7 @@
         }
       ],
       "cover_width": "60%",
-      "cover_update_width": "60%",
+      "cover_update_width": "20%",
       "gif_width": "25%",
       "gif_height": "30%",
       "phone_gif_width": "50%"

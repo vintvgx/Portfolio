@@ -1,35 +1,28 @@
 .about-view {
-    padding: 20px;
-  }
-  
-  .project-container {
-    min-height: 100vh; /* Ensuring each project takes at least the full height of the viewport */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
-    opacity: 0.5;
-    transform: translateY(20px);
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .project-container.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .project-title,
-  .project-content {
-    width: 80%; /* Adjusting width */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .project-content {
-    display: none;
-  }
-  
-  .project-container.active .project-content {
-    display: block;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.palette {
+  display: flex;
+  gap: 10px;
+}
+
+.color-square {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.color-name {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* To ensure the text is readable */
+}

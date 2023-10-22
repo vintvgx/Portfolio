@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import "./Footer.css";
 
 const footerStyles: React.CSSProperties = {
-  backgroundColor: "#ffffff",
+  backgroundColor: "#ffffff00",
   padding: "20px 0",
   fontSize: "0.8rem",
   width: "100%",
