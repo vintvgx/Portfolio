@@ -71,7 +71,7 @@
         "styles": {
             "backgroundColor": "white",
             "color": "black",
-            "width": "35%",
+            "width": "50%",
             "height": "100px"
         }
     }
