@@ -74,5 +74,38 @@
             "width": "50%",
             "height": "100px"
         }
+    },
+    {
+        "title" : "Remodulin",
+        "subtitle": "Kotlin applicaiton",
+        "description": "Remodulin is a Kotlin application designed to help users track their health. Users can log their blood pressure, heart rate, and weight, and view their progress through a dynamic chart. Remodulin is a simple and intuitive way to monitor your health.",
+        "website": "https://www.remodulin.com/pump-options/remunity",
+        "github": "N/A",
+        "Features": [
+            "View health data through chart", 
+            "Log health data", 
+            "View health data through chart", 
+            "CRUD operations"
+        ],
+        "Technologies": [
+            "KOTLIN",
+            "JUNIT4",
+            "Mockk"
+        ],
+        "images": {
+                "cover_image": "REMODULIN COVER",
+                "cover_alt": "REMODULIN",
+                "cover_src": "/REMODULIN.png",
+                "gif_image": "REMODULIN GIF",
+                "gif_alt": "REMODULIN VIDEO",
+                "gif_src": "/REMODULIN.png"
+            
+        },
+        "styles": {
+            "backgroundColor": "white",
+            "color": "black",
+            "width": "100%",
+            "height": "100px"
+        }
     }
 ]

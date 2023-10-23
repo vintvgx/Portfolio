@@ -28,7 +28,7 @@ const Header_V2: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   };
 
   return (
-    <div className="header">
+    <div className={`header ${className}`}>
       <div className="profile-icon" />
       <div className="nav-links">
         <NavLink
