@@ -15,11 +15,16 @@ const footerStyles: React.CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
+  opacity: "0",
 };
 
-const Footer: React.FC = () => {
+type FooterTypes = {
+  className?: string;
+};
+
+const Footer: React.FC<FooterTypes> = ({ className }) => {
   return (
-    <footer style={footerStyles}>
+    <footer className={`${className}`} style={footerStyles}>
       <div className="leftSelection">
         Contact
         <br />

@@ -29,12 +29,12 @@ const Home: React.FC = () => {
 
     const timerHeader = setTimeout(() => {
       setFadeInHomeContent(true);
-    }, 3000);
+    }, 2500);
 
     const timerHomeContent = setTimeout(() => {
       setFadeInCarousel(true);
       setFadeInFooter(true);
-    }, 4000);
+    }, 2000);
 
     return () => {
       clearTimeout(timerSplash);
@@ -72,8 +72,10 @@ const Home: React.FC = () => {
                 justifyContent: "flex-end",
                 height: "12vh",
               }}
-              className={fadeInFooter ? "fade-in fade-in-delay-3" : ""}>
-              <Footer />
+              className={fadeInFooter ? "fade-in fade-in-delay-2" : ""}>
+              <Footer
+                className={fadeInFooter ? "fade-in fade-in-delay-2" : ""}
+              />
             </div>
           </div>
         </>

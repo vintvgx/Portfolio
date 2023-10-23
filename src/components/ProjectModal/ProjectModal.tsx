@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {
-  AiOutlineLeftCircle,
+  AiOutlineRightCircle,
   AiFillGithub,
   AiFillCaretRight,
 } from "react-icons/ai";
@@ -26,7 +26,7 @@ const ProjectModalView: React.FC<ModalProps> = ({
   return (
     <div className={`modal-container ${className}`}>
       <div className="modal-header">
-        <AiOutlineLeftCircle onClick={close} className="modal-back-icon" />
+        <AiOutlineRightCircle onClick={close} className="modal-back-icon" />
         <span onClick={close} className="modal-back-text">
           Back to Projects
         </span>

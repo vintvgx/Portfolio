@@ -4,6 +4,7 @@
     background: white;
     white-space: nowrap;
     position: relative;
+    opacity: 0;
   }
   
   .carousel:before,

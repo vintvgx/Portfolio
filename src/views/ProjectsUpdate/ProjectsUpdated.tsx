@@ -60,8 +60,8 @@ const ProjectsUpdated: React.FC = () => {
             backgroundColor: project.styles?.backgroundColor || "white",
             color: project.styles?.color || "black",
             margin: "40px auto",
-            borderRadius: "15px",
-            boxShadow: "0px 5px 15px rgba(0,0,0,0.3)",
+            borderRadius: "25px",
+            boxShadow: "0px 15px 15px rgba(0,0,0,0.3)",
             backgroundImage: `url(${project.images.gif_src})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -81,6 +81,7 @@ const ProjectsUpdated: React.FC = () => {
               padding: "10px 20px",
               color: "white", // Assuming white text for visibility
               textAlign: "left", // Aligning text to the left
+              borderRadius: "0 0 25px 25px", // Rounded bottom corners
             }}>
             <h1>{project.title}</h1>
             <h2>{project.subtitle}</h2>
