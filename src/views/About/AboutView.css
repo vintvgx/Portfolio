@@ -1,28 +1,90 @@
+/* AboutView.css */
+
 .about-view {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.palette {
-  display: flex;
-  gap: 10px;
-}
-
-.color-square {
-  width: 100px;
-  height: 100px;
-  display: flex;
+  
   align-items: center;
+  font-family: 'Colfax,sans-serif', sans-serif; /* adjust the font family as required */
+  text-align: left;
+  display: flex;
   justify-content: center;
-  position: relative;
+  align-items: center;
+  margin-top: 10%;
 }
 
-.color-name {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  font-size: 12px;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* To ensure the text is readable */
+.about-content-section {
+  width: 70%; /* Width of the content section in desktop view */
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  margin-top: 70px;
+  
+}
+
+.left-column {
+  
+  width: 50%;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.left-column img {
+  width: 70%;
+}
+
+.right-column {
+  width: 50%;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  max-width: 100%; /* Adjust this value as needed */
+  overflow-x: auto; 
+}
+
+.about-content {
+  order: 2; /* Display in the middle in desktop view */
+}
+
+.about-content p {
+  font-weight: 200;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Media query for phone view (adjust the breakpoint as needed) */
+@media only screen and (max-width: 768px) {
+  .about-view {
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
+    margin-top: 25%;
+    width: 100vw;
+  }
+
+  .about-content-section {
+    flex-direction: column;
+    width: 95%;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .left-column,
+  .right-column {
+    width: 85%; /* Full width for columns in phone view */
+  }
+
+  .left-column img {
+    width: 100%;
+  }
+
+  .right-column {
+    margin-top: 20px;
+  }
+
+  /* .left-column {
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  align-content: center;
+  } */
 }
