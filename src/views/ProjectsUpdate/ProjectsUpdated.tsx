@@ -30,25 +30,18 @@ const ProjectsUpdated: React.FC = () => {
   };
 
   return (
-    <div style={{ flex: 1, overflowX: "hidden" }}>
+    <div
+      style={{
+        flex: 1,
+        overflowX: "hidden",
+      }}>
       <div
         style={{
           width: "100%",
-          height: "20vh",
+          height: "5vh",
           padding: "50px",
           position: "relative",
-        }}>
-        <span
-          style={{
-            position: "absolute",
-            bottom: "50px",
-            left: "300px",
-            fontSize: "3rem",
-            fontWeight: "400",
-          }}>
-          Projects.
-        </span>
-      </div>
+        }}></div>
       {projects.map((project, index) => (
         <div
           className="project-card"
@@ -56,7 +49,7 @@ const ProjectsUpdated: React.FC = () => {
           onClick={() => handleImageClick(index)}
           style={{
             width: "90vw",
-            height: "50vh",
+            // height: "50vh",
             backgroundColor: project.styles?.backgroundColor || "white",
             color: project.styles?.color || "black",
             margin: "40px auto",
