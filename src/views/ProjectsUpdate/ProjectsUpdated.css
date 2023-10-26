@@ -38,3 +38,9 @@
 .modal-container.entering, .modal-container.exiting {
   transition: all .5s ease-in-out;
 }
+
+@media only screen and (max-width: 768px) {
+  .project-card {
+    height: 55vh
+  }
+}
