@@ -15,7 +15,8 @@ const footerStyles: React.CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  opacity: "0",
+  // opacity: "0",
+  backdropFilter: "blur(10px)",
 };
 
 type FooterTypes = {
@@ -31,9 +32,24 @@ const Footer: React.FC<FooterTypes> = ({ className }) => {
         kareems0108@gmail.com
       </div>
       <div className="centerSelection">
-        <FaGithub className="icon" size={16} />
-        <FaLinkedin className="icon" size={16} />
-        <FaTwitter className="icon" size={16} />
+        <a
+          href="https://github.com/vintvgx?tab=overview&from=2023-10-01&to=2023-10-25"
+          target="_blank"
+          rel="noreferrer noopener">
+          <FaGithub className="icon" size={16} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/kareem-saygbe-63b82a1b4/"
+          target="_blank"
+          rel="noreferrer noopener">
+          <FaLinkedin className="icon" size={16} />
+        </a>
+        <a
+          href="https://x.com/devplusdesign?s=20"
+          target="_blank"
+          rel="noreferrer noopener">
+          <FaTwitter className="icon" size={16} />
+        </a>
       </div>
       <div className="rightSelection">
         Copyright
