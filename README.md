@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# My Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to my portfolio site! This is where I showcase my journey as a full-stack engineer, and share some of the projects that reflect my passion for creating software that connects people and highlights their stories over commercialization.
 
-## Available Scripts
+## About Me
 
-In the project directory, you can run:
+In my pursuit of becoming an experienced full-stack engineer, I've worked on personal projects that demonstrate my dedication to technology with a human touch. Here are some of the notable projects I've worked on:
 
-### `npm start`
+### Urban Rhetoric Chatbot (MERN Stack)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Description: An interactive React application built with the MERN stack that responds to users in authentic urban rhetoric. This project showcases my skills in creating dynamic and engaging chatbot applications.
+- GitHub Repository: [Urban Rhetoric Chatbot](https://github.com/yourusername/urban-rhetoric-chatbot)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### React Native Media-Sharing Social Network
 
-### `npm test`
+- Description: A React Native application that I built from the ground up, allowing users to share media and connect with others. This project highlights my proficiency in mobile app development and my ability to create social networking features.
+- GitHub Repository: [React Native Social Network](https://github.com/yourusername/react-native-social-network)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Additional Information
 
-### `npm run build`
+- **Website:** [kareemsaygbe.dev](https://kareemsaygbe.dev)
+- **LinkedIn:** Connect with me on [LinkedIn](https://www.linkedin.com/in/kareem-saygbe-63b82a1b4)
+- **Technologies Used:** React, TypeScript, MERN Stack, React Native, and more.
+- **Contact:** You can reach out to me at [your-email@example.com].
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to explore my portfolio and get in touch if you have any questions or would like to collaborate on a project. Thank you for visiting!
