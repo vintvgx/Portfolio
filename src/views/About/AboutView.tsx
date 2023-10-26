@@ -6,7 +6,7 @@ const AboutView: React.FC = () => {
     <div className="about-view">
       <div className="about-content-section">
         <div className="left-column">
-          <img src={"/About.JPG"} alt="About" />
+          <img src={"/About.jpg"} alt="About" />
         </div>
         <div className="right-column">
           <div className="about-content">
