@@ -76,30 +76,29 @@
         }
     },
     {
-        "title" : "Remodulin",
-        "subtitle": "Kotlin applicaiton",
-        "description": "Remodulin is a Kotlin application designed to help users track their health. Users can log their blood pressure, heart rate, and weight, and view their progress through a dynamic chart. Remodulin is a simple and intuitive way to monitor your health.",
+        "title" : "REMUNITY",
+        "subtitle": "Kotlin Application",
+        "description": "I played a key role in unit testing for the REMUNITY app at Deka Research & Development, an Android application written in Kotlin. REMUNITY is designed to monitor a pump device that dispenses Remodulin to patients, helping them track their health. During this project, I extensively utilized JUnit4 and Mockk libraries for testing, ensuring the reliability and accuracy of the application.",
         "website": "https://www.remodulin.com/pump-options/remunity",
         "github": "N/A",
         "Features": [
-            "View health data through chart", 
-            "Log health data", 
-            "View health data through chart", 
-            "CRUD operations"
+            "Real-time Health Data Tracking",
+            "User-friendly Health Data Logging",
+            "Interactive Health Data Chart",
+            "CRUD Operations for Health Records"
         ],
         "Technologies": [
             "KOTLIN",
-            "JUNIT4",
+            "JUnit4",
             "Mockk"
         ],
         "images": {
-                "cover_image": "REMODULIN COVER",
-                "cover_alt": "REMODULIN",
-                "cover_src": "/REMODULIN.png",
-                "gif_image": "REMODULIN GIF",
-                "gif_alt": "REMODULIN VIDEO",
-                "gif_src": "/REMODULIN.png"
-            
+            "cover_image": "REMODULIN COVER",
+            "cover_alt": "REMODULIN",
+            "cover_src": "/REMODULIN.png",
+            "gif_image": "REMODULIN GIF",
+            "gif_alt": "REMODULIN VIDEO",
+            "gif_src": "/REMODULIN.png"
         },
         "styles": {
             "backgroundColor": "white",
