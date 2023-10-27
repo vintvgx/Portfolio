@@ -20,7 +20,7 @@ const HomeContent: React.FC<HomeContentProps> = ({ className }) => {
           <p>
             Based in Boston, MA, I'm a dedicated{" "}
             <span style={{ fontWeight: "bold" }}>Full Stack</span> Software
-            Engineer with a focus on{" "}
+            Engineer specializing in{" "}
             <span style={{ fontWeight: "bold" }}>React</span>.
           </p>
         </div>

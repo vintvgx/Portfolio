@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./ProjectsUpdated.css";
-import projects from "./ProjectsUpdate.json";
+import "./Projects.css";
+import projects from "./Projects.json";
 import ProjectModalView from "../../components/ProjectModal/ProjectModal";
 
-const ProjectsUpdated: React.FC = () => {
+const Projects: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalTransitionState, setModalTransitionState] = useState<
@@ -106,4 +106,4 @@ const ProjectsUpdated: React.FC = () => {
   );
 };
 
-export default ProjectsUpdated;
+export default Projects;

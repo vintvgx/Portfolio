@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AiFillMail } from "react-icons/ai";
+// import { AiFillMail } from "react-icons/ai";
 import { FaBars, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Header.css";
@@ -17,10 +17,6 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
 
   const activeNavStyle = {
     color: "black",
-    borderRadius: "40px",
-    display: "flex",
-    alignItems: "center",
-    placeContent: "center",
   };
 
   const defaultNavStyle = {
@@ -38,71 +34,41 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   };
 
   return (
-    <div className={`header ${className}`}>
+    <div className={`header ${className}`} style={{ backgroundColor }}>
       <div className="profile-icon" />
       <div className="nav-links">
         <NavLink
           to="/"
           style={isActive("/") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          <p>Home</p>
+          Home
         </NavLink>
         <NavLink
           to="/Projects"
           style={isActive("/Projects") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          <p>Work</p>
+          Work
         </NavLink>
         <NavLink
           to="/About"
           style={isActive("/About") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          <p>About</p>
+          About
         </NavLink>
 
         <div
           className={`menu-icon ${isMobileMenuOpen ? "open" : ""}`}
           onClick={openModal}>
-          <FaBars
-            style={{
-              color: "rgba(145, 145, 145, 0.856)",
-              marginLeft: "10px",
-              marginTop: "2px",
-            }}
-            color={"black"}
-          />
+          <FaBars style={{ color: "rgba(145, 145, 145, 0.856)" }} />
         </div>
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <a className="close-modal" onClick={closeModal}>
+            <span className="close-modal" onClick={closeModal}>
               &times;
-            </a>
-            {/* <div className="social-icons">
-              <AiFillMail className="icon" color={"black"} />
-              <a
-                href="https://github.com/vintvgx?tab=overview&from=2023-10-01&to=2023-10-25"
-                target="_blank"
-                rel="noreferrer noopener">
-                <FaGithub className="icon" size={16} />
-                <h1>Github</h1>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kareem-saygbe-63b82a1b4/"
-                target="_blank"
-                rel="noreferrer noopener">
-                <FaLinkedin className="icon" size={16} />
-              </a>
-              <a
-                href="https://x.com/devplusdesign?s=20"
-                target="_blank"
-                rel="noreferrer noopener">
-                <FaTwitter className="icon" size={16} />
-              </a>
-            </div> */}
+            </span>
             <div
               className="social-icons"
               style={{
@@ -110,34 +76,34 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
                 justifyContent: "center",
                 flexDirection: "column",
                 gap: "20px",
+                marginTop: "20px",
               }}>
               <a
                 href="https://github.com/vintvgx?tab=overview&from=2023-10-01&to=2023-10-25"
                 target="_blank"
                 rel="noreferrer noopener">
-                {/* <FaGithub className="icon" size={16} /> */}
+                <FaGithub className="icon" />
                 <span className="icon">Github</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/kareem-saygbe-63b82a1b4/"
                 target="_blank"
                 rel="noreferrer noopener">
-                {/* <FaGithub className="icon" size={16} /> */}
+                <FaLinkedin className="icon" />
                 <span className="icon">LinkedIN</span>
               </a>
               <a
                 href="https://x.com/devplusdesign?s=20"
                 target="_blank"
                 rel="noreferrer noopener">
-                {/* <FaGithub className="icon" size={16} /> */}
+                <FaTwitter className="icon" />
                 <span className="icon">Twitter</span>
               </a>
               <a href="/RESUME.pdf" target="_blank" rel="noreferrer noopener">
-                {/* <FaGithub className="icon" size={16} /> */}
                 <span className="icon">Resume</span>
               </a>
             </div>
-            <div className="lets-talk-button">Let's Talk</div>
+            <button className="lets-talk-button">Let's Talk</button>
           </div>
         </div>
       )}

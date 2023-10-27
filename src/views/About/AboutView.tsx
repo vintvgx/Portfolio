@@ -19,7 +19,7 @@ const AboutView: React.FC = () => {
               FDA-approved medical devices. Specifically, I was responsible for
               ensuring the performance and reliability of the battery component
               of a QNX embedded system. Additionally, I played a key role in
-              providing unity and automation testing for a Kotlin Android
+              providing unit and automation testing for a Kotlin Android
               application designed for a Remodulin medical device. This
               experience laid a strong foundation for my career in full-stack
               engineering.

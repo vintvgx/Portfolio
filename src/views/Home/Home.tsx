@@ -9,8 +9,8 @@ import AboutView from "../About/AboutView";
 import Carousel from "../../components/Carousel/Carousel";
 import Footer from "../../components/Footer/Footer";
 import HomeContent from "../../components/HomeContent/HomeContent";
-import ProjectsUpdated from "../ProjectsUpdate/ProjectsUpdated";
-import Header_v2 from "../../components/HeaderV2/Header_V2";
+import Projects from "../ProjectsUpdate/Projects";
+import Header from "../../components/Header/Header";
 
 const Home: React.FC = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
       ) : (
         <>
           {/* <Header className={fadeInHeader ? "fade-in" : ""} /> */}
-          <Header_v2 className={fadeInHeader ? "fade-in" : ""} />
+          <Header className={fadeInHeader ? "fade-in" : ""} />
           <div style={{ flex: 1 }}>
             {location.pathname === "/" && (
               <>
@@ -62,7 +62,7 @@ const Home: React.FC = () => {
                 />
               </>
             )}
-            {location.pathname === "/Projects" && <ProjectsUpdated />}
+            {location.pathname === "/Projects" && <Projects />}
             {location.pathname === "/About" && <AboutView />}
 
             <div
