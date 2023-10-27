@@ -111,7 +111,8 @@ font-style: normal;
 .close-modal {
   position: relative;
   top: 10px;
-  left: 180px;
+  left: 170px;
+  padding: 1px;
   font-size: 30px;
   cursor: pointer;
   color: red
