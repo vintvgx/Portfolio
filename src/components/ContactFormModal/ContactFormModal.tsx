@@ -15,12 +15,40 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add code here to send the email/message
-    // You can use a library like nodemailer for the backend to send emails.
-    // You'll need to implement this part based on your server logic.
+    setIsSending(true);
+
+    try {
+      const response = await fetch(
+        "https://us-central1-portfolio-10e95.cloudfunctions.net/sendEmail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, message }),
+        }
+      );
+
+      if (response.ok) {
+        setSuccessMessage("Email sent successfully!");
+        setIsError(false);
+      } else {
+        setSuccessMessage("Failed to send email. Please try again.");
+        setIsError(true);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSuccessMessage("Failed to send email. Please try again.");
+      setIsError(true);
+    }
+
+    setIsSending(false);
   };
 
   return (
@@ -47,17 +75,22 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({
           </div>
           <div className="form-group-message">
             <textarea
-              className="message-input" // Add a class for the message input
+              className="message-input"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type Message"
             />
           </div>
 
-          <button type="submit" className="send-button">
-            Send
+          <button type="submit" className="send-button" disabled={isSending}>
+            {isSending ? "Sending..." : "Send"}
           </button>
         </form>
+
+        {isError && <div className="error-message">{successMessage}</div>}
+        {!isError && successMessage && (
+          <div className="success-message">{successMessage}</div>
+        )}
       </div>
     </div>
   );
