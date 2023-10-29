@@ -21,6 +21,7 @@
   border-radius: 50%;
   margin-left: 100px; 
   position: relative;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -40,6 +41,7 @@ color: rgba(145, 145, 145, 0.856); /* Change text color to white */
 font-size: 15px; /* Increased font size */
 font-weight: normal;
 font-style: normal;
+cursor: pointer;
 }
 
 
@@ -58,7 +60,6 @@ font-style: normal;
   color: #000; /* Adjust according to your needs */
   display: none; /* It will be visible only on mobile */
   align-self: center; /* Align self to center */
- 
 }
 
 .icon {
@@ -166,7 +167,8 @@ font-style: normal;
 
     .menu-icon {
     display: block;
-    margin-right: 0;  /* Remove margin */
+    margin-left: 8px;  /* Remove margin */
+    
   }
 
     .profile-icon {
@@ -175,5 +177,9 @@ font-style: normal;
 
     .social-icons {
     display: none;  /* Hide by default on mobile */
+  }
+
+  .nav-links {
+    margin-right: 3%;
   }
 }

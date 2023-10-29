@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { AiFillMail } from "react-icons/ai";
 import { FaBars, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { NavLink, useLocation } from "react-router-dom";
+import ContactFormModal from "../ContactFormModal/ContactFormModal";
 import "./Header.css";
 
 type HeaderProps = {
@@ -13,7 +14,9 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isContactFormModalOpen, setContactFormModalOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   const activeNavStyle = {
     color: "black",
@@ -33,9 +36,36 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
     setIsModalOpen(false);
   };
 
+  const openContactFormModal = () => {
+    // setIsMobileMenuOpen(false); // Close mobile menu if open
+    setContactFormModalOpen(true);
+  };
+
+  const closeContactFormModal = () => {
+    setContactFormModalOpen(false);
+  };
+
+  useEffect(() => {
+    // Check if the screen width is below a certain threshold (e.g., 768px)
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Initial check
+    handleResize();
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className={`header ${className}`} style={{ backgroundColor }}>
-      <div className="profile-icon" />
+      <div className="profile-icon" onClick={openContactFormModal} />
       <div className="nav-links">
         <NavLink
           to="/"
@@ -55,12 +85,14 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
           className="nav-link">
           About
         </NavLink>
-
-        <div
-          className={`menu-icon ${isMobileMenuOpen ? "open" : ""}`}
-          onClick={openModal}>
-          <FaBars style={{ color: "rgba(145, 145, 145, 0.856)" }} />
-        </div>
+        {isMobileView && ( // Render "Contact" only in mobile view
+          <span
+            style={isActive("/Contact") ? activeNavStyle : defaultNavStyle}
+            className="nav-link "
+            onClick={openModal}>
+            Contact
+          </span>
+        )}
       </div>
 
       {isModalOpen && (
@@ -103,9 +135,18 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
                 <span className="icon">Resume</span>
               </a>
             </div>
-            <button className="lets-talk-button">Let's Talk</button>
+            <button className="lets-talk-button" onClick={openContactFormModal}>
+              Let's Talk
+            </button>
           </div>
         </div>
+      )}
+
+      {isContactFormModalOpen && (
+        <ContactFormModal
+          isOpen={isContactFormModalOpen}
+          onClose={closeContactFormModal}
+        />
       )}
     </div>
   );
