@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { AiFillMail } from "react-icons/ai";
-import { FaBars, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { NavLink, useLocation } from "react-router-dom";
 import ContactFormModal from "../ContactFormModal/ContactFormModal";
 import "./Header.css";
@@ -30,6 +30,7 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   const openModal = () => {
     setIsMobileMenuOpen(false); // Close mobile menu if open
     setIsModalOpen(true);
+    console.log(isMobileMenuOpen);
   };
 
   const closeModal = () => {
