@@ -1,0 +1,30 @@
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 0px;
+  border-bottom: 1px solid rgb(120, 120, 120);
+  border-radius: 4px;
+  margin-top: 5px;
+  outline: none;
+  background-color: transparent;
+  color: white
+}
+
+.focused .label {
+  color: #ababab; 
+  text-align: left;
+}
+
+/* Set the placeholder text color */
+.input::placeholder {
+  color: #999; /* Change this to your desired placeholder text color */
+}
