@@ -10,13 +10,14 @@ const footerStyles: React.CSSProperties = {
   fontFamily: "Arial, sans-serif",
   color: "#666",
   lineHeight: "1.4",
-  position: "fixed",
+  // position: "fixed",
   bottom: "0",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   // opacity: "0",
   backdropFilter: "blur(10px)",
+  zIndex: "-1",
 };
 
 type FooterTypes = {

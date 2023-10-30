@@ -147,7 +147,7 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
                 target="_blank"
                 rel="noreferrer noopener">
                 <FaLinkedin className="icon" />
-                <span className="icon">LinkedIN</span>
+                <span className="icon">LinkedIn</span>
                 <BsArrowUpRight className="arrow-icon" />
               </a>
               <a
