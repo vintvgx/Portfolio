@@ -86,7 +86,6 @@ form {
     position: absolute;
     top: 80px;
     left: 40px;
-   
   }
 
   .back-button:hover {
@@ -94,17 +93,18 @@ form {
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .error-message {
+  /* Styles for the error message */
+.error-message {
   color: red; /* Change the color to your preference */
   font-size: 14px; /* Adjust the font size */
-  margin-top: 30px; /* Add spacing to separate from the form */
+  margin-top: 10px; /* Add spacing to separate from the form */
 }
 
 /* Styles for the success message */
 .success-message {
   color: green; /* Change the color to your preference */
   font-size: 14px; /* Adjust the font size */
-  margin-top: 30px; /* Add spacing to separate from the form */
+  margin-top: 10px; /* Add spacing to separate from the form */
 }
 
   @media (max-width: 767px) {
@@ -120,5 +120,6 @@ form {
       position: absolute;
       top: 20px; /* Adjust top position for mobile view */
       left: 20px; /* Adjust left position for mobile view */
+      font-size: 20px;
     }
   }

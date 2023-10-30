@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import { AiFillMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { BsArrowUpRight, BsChevronLeft, BsDot } from "react-icons/bs";
 import { NavLink, useLocation } from "react-router-dom";
 import ContactFormModal from "../ContactFormModal/ContactFormModal";
 import "./Header.css";
@@ -44,6 +45,7 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
 
   const closeContactFormModal = () => {
     setContactFormModalOpen(false);
+    closeModal();
   };
 
   useEffect(() => {
@@ -72,26 +74,26 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
           to="/"
           style={isActive("/") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          Home
+          {isActive("/") ? <BsDot className="dot" /> : "Home"}
         </NavLink>
         <NavLink
           to="/Projects"
           style={isActive("/Projects") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          Work
+          {isActive("/Projects") ? <BsDot /> : "Work"}
         </NavLink>
         <NavLink
           to="/About"
           style={isActive("/About") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          About
+          {isActive("/About") ? <BsDot /> : "About"}
         </NavLink>
-        {isMobileView && ( // Render "Contact" only in mobile view
+        {isMobileView && (
           <span
             style={isActive("/Contact") ? activeNavStyle : defaultNavStyle}
-            className="nav-link "
+            className="nav-link"
             onClick={openModal}>
-            Contact
+            {isActive("/Contact") ? <BsDot /> : "Contact"}
           </span>
         )}
       </div>
@@ -99,15 +101,18 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close-modal" onClick={closeModal}>
-              &times;
-            </span>
+            <div className="close-button" onClick={closeModal}>
+              <BsChevronLeft className="back-icon" />
+              <span className="back-text">Back</span>
+            </div>
+
             <div
               className="social-icons"
               style={{
                 display: "flex",
                 justifyContent: "center",
                 flexDirection: "column",
+                alignItems: "center",
                 gap: "20px",
                 marginTop: "20px",
               }}>
@@ -117,6 +122,7 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
                 rel="noreferrer noopener">
                 <FaGithub className="icon" />
                 <span className="icon">Github</span>
+                <BsArrowUpRight className="arrow-icon" />
               </a>
               <a
                 href="https://www.linkedin.com/in/kareem-saygbe-63b82a1b4/"
@@ -124,6 +130,7 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
                 rel="noreferrer noopener">
                 <FaLinkedin className="icon" />
                 <span className="icon">LinkedIN</span>
+                <BsArrowUpRight className="arrow-icon" />
               </a>
               <a
                 href="https://x.com/devplusdesign?s=20"
@@ -131,6 +138,7 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
                 rel="noreferrer noopener">
                 <FaTwitter className="icon" />
                 <span className="icon">Twitter</span>
+                <BsArrowUpRight className="arrow-icon" />
               </a>
               <a href="/RESUME.pdf" target="_blank" rel="noreferrer noopener">
                 <span className="icon">Resume</span>

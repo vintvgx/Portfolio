@@ -18,7 +18,11 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({
   const [isSending, setIsSending] = useState(false);
   const [isError, setIsError] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
+  const handleSubmit = async (e: React.FormEvent) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
@@ -49,8 +53,9 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({
     }
 
     setIsSending(false);
-  };
 
+    if (onClose) onClose();
+  };
   return (
     <div className={`c-modal ${isOpen ? "open" : ""}`}>
       <div className="c-modal-content">
@@ -86,6 +91,11 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({
             {isSending ? "Sending..." : "Send"}
           </button>
         </form>
+
+        {isError && <div className="error-message">{successMessage}</div>}
+        {!isError && successMessage && (
+          <div className="success-message">{successMessage}</div>
+        )}
 
         {isError && <div className="error-message">{successMessage}</div>}
         {!isError && successMessage && (

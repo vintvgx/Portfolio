@@ -97,27 +97,35 @@ cursor: pointer;
 
 .modal-content {
   background-color: #fff;
-  width: 80%;
-  max-width: 600px; /* Increase maximum width */
+  width: 50%;
+  max-width: 600px;
   border: 1px solid #ccc;
-  border-radius: 15px; /* Increase border radius for a smoother look */
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Add some padding for spacing */
+  padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-.close-modal {
-  position: relative;
+.close-button {
+  /* position: relative; 
   top: 10px;
-  left: 170px;
+  right: 200px; */
   padding: 1px;
-  font-size: 30px;
+  font-size: 12px;
   cursor: pointer;
-  color: red
-  }
+  color: rgb(95, 95, 95);
+  /* justify-content: flex-start; */
+  align-self: flex-start;
+  /* align-content: flex-start; */
+}
+
+.close-button:hover {
+  color: rgb(19, 19, 19);
+
+}
 
 .social-icons {
   display: flex;
@@ -135,17 +143,23 @@ cursor: pointer;
 }
 
 .icon {
-  font-size: 24px; /* Slightly larger icons */
-  margin-right: 5px; /* Add some spacing between icons and text */
+  font-size: 15px; /* Slightly larger icons */
+  margin-right: 5px;
 }
 
 .icon:hover {
   color: #0056b3; /* Change color on hover */
 }
 
+.arrow-icon {
+  font-size: 9px;
+  color: rgb(95, 95, 95);
+
+}
+
 .lets-talk-button {
-  padding: 12px 24px; /* Increase padding for a more prominent button */
-  background-color: #007bff;
+  padding: 12px 24px; 
+  background-color: #323232;
   color: #fff;
   border: none;
   border-radius: 15px;
@@ -156,8 +170,10 @@ cursor: pointer;
 }
 
 .lets-talk-button:hover {
-  background-color: #0056b3;
+  background-color: #5c5c5c;
 }
+
+
 
 @media only screen and (max-width: 768px) {
     .social-icons {
