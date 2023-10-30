@@ -108,12 +108,13 @@ form {
 }
 
   @media (max-width: 767px) {
+   
     .form-group-name {
-      width: 400px; 
+      width: 350px; 
     }
     
     .message-input {
-      width: 400px 
+      width: 350px 
     }
     
     .back-button {
