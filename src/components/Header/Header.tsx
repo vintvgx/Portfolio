@@ -18,6 +18,7 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isContactFormModalOpen, setContactFormModalOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
+  const [animate, setAnimate] = useState(false); // State to toggle animation
 
   const activeNavStyle = {
     color: "black",
@@ -66,9 +67,27 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
     };
   }, []);
 
+  // Function to toggle the animation class
+  const toggleAnimation = () => {
+    setAnimate((prevAnimate) => !prevAnimate);
+  };
+
+  useEffect(() => {
+    // Toggle animation class every 10 seconds
+    const animationInterval = setInterval(toggleAnimation, 5000);
+
+    return () => {
+      clearInterval(animationInterval);
+    };
+  }, []);
+
   return (
     <div className={`header ${className}`} style={{ backgroundColor }}>
-      <div className="profile-icon" onClick={openContactFormModal} />
+      <div
+        className={`profile-icon ${animate ? "animated" : ""}`}
+        onClick={openContactFormModal}
+      />
+
       <div className="nav-links">
         <NavLink
           to="/"
@@ -97,7 +116,6 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
           </span>
         )}
       </div>
-
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
@@ -150,7 +168,6 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
           </div>
         </div>
       )}
-
       {isContactFormModalOpen && (
         <ContactFormModal
           isOpen={isContactFormModalOpen}
