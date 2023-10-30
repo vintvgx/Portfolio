@@ -34,7 +34,7 @@
   .modal-back-icon {
     font-size: 24px; /* adjust icon size if needed */
     cursor: pointer;
-    margin-right: 10px; /* adjust spacing if needed */
+    margin-left: 5px; /* adjust spacing if needed */
 }
 
 .modal-back-text {
@@ -45,9 +45,9 @@
     width: 100%;
     height: .5px; /* adjust height for your desired thickness */
     background-color: #fff; /* adjust color to match your design */
-    margin: 15px 0; /* vertical spacing, adjust as needed */
+    margin: 15px 0; 
     margin-bottom: 30px;
-    z-index: 1;
+    z-index: 1001;
 }
 
 .project-details {
@@ -83,6 +83,7 @@ line-height: 1.6;
 
 .project-details h3 {
     font-weight: 400;
+
 }
   
   
@@ -137,13 +138,14 @@ color: white
     flex-direction: column;
     gap: 10px; /* Adjust the gap between the links */
     margin-top: 20px; /* Space from the Technologies section */
+    margin-bottom: 50px;
   }
   
   .link-item {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    align-items: flex-start; /* Ensures that icons and text align to the left */
+    align-items: flex-start; 
   }
 
   .icon-label-container {
@@ -153,6 +155,7 @@ color: white
     align-items: center;
     gap: 5px;
     display: flex;
+    margin-top: 20px;
 }
 
 /* For the text labels - Website & Github */
@@ -174,6 +177,7 @@ color: white
     display: block;
     overflow-wrap: break-word;
     transition: color 0.3s ease; /* Smooth transition effect for hover */
+    margin-top: 5px;
 }
   
 .actual-link:hover {
