@@ -31,6 +31,7 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
   const openModal = () => {
     setIsMobileMenuOpen(false); // Close mobile menu if open
     setIsModalOpen(true);
+    console.log(isMobileMenuOpen);
   };
 
   const closeModal = () => {

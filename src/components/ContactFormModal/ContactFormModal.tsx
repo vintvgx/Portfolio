@@ -18,7 +18,11 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({
   const [isSending, setIsSending] = useState(false);
   const [isError, setIsError] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
+  const handleSubmit = async (e: React.FormEvent) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
@@ -76,17 +80,22 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({
           </div>
           <div className="form-group-message">
             <textarea
-              className="message-input" // Add a class for the message input
+              className="message-input"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type Message"
             />
           </div>
 
-          <button type="submit" className="send-button">
-            Send
+          <button type="submit" className="send-button" disabled={isSending}>
+            {isSending ? "Sending..." : "Send"}
           </button>
         </form>
+
+        {isError && <div className="error-message">{successMessage}</div>}
+        {!isError && successMessage && (
+          <div className="success-message">{successMessage}</div>
+        )}
 
         {isError && <div className="error-message">{successMessage}</div>}
         {!isError && successMessage && (
