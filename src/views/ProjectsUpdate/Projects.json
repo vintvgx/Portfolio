@@ -76,6 +76,38 @@
         }
     },
     {
+        "title" : "Portfolio",
+        "subtitle": "React Application",
+        "description": "Using React and Firebase hosting, I built my portfolio website to display my experience as a software engineer.",
+        "website": "https://kareemsaygbe.dev",
+        "github": "https://github.com/vintvgx/Portfolio",
+        "Features": [
+            "Responsive Design", 
+            "Deployed using Firebase hosting",
+            "Implemented Google Cloud Function for sending email"
+        ],
+        "Technologies": [
+            "REACT",
+            "Firebase",
+            "NODE JS",
+            "GCP"
+        ],
+        "images": {
+            "cover_image": "PORTFOLIO COVER",
+            "cover_alt": "PORTFOLIO",
+            "cover_src": "/PORTFOLIO.png",
+            "gif_image": "PORTFOLIO GIF",
+            "gif_alt": "PORTFOLIO VIDEO",
+            "gif_src": "/PORTFOLIO.gif"
+        },
+        "styles": {
+            "backgroundColor": "black",
+            "color": "white",
+            "width": "100%",
+            "height": "100px"
+        }
+    },
+    {
         "title" : "REMUNITY",
         "subtitle": "Kotlin Application",
         "description": "I played a key role in unit testing for the REMUNITY app at Deka Research & Development, an Android application written in Kotlin. REMUNITY is designed to monitor a pump device that dispenses Remodulin to patients, helping them track their health. During this project, I extensively utilized JUnit4 and Mockk libraries for testing, ensuring the reliability and accuracy of the application.",

@@ -26,10 +26,10 @@ const ProjectModalView: React.FC<ModalProps> = ({
   return (
     <div className={`modal-container ${className}`}>
       <div className="modal-header">
-        <AiOutlineRightCircle onClick={close} className="modal-back-icon" />
         <span onClick={close} className="modal-back-text">
           Back to Projects
         </span>
+        <AiOutlineRightCircle onClick={close} className="modal-back-icon" />
       </div>
       <div className="modal-line-separator"></div>
       <div className="project-details">
@@ -51,7 +51,7 @@ const ProjectModalView: React.FC<ModalProps> = ({
             </li>
           ))}
         </ul>
-        <h3>Technologies</h3>
+        <h3 style={{ marginTop: "20px" }}>Technologies</h3>
         <div className="technologies-container">
           {project.Technologies.map((tech: any) => (
             <span key={tech} className="technology-item">
