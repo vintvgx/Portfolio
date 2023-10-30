@@ -19,9 +19,21 @@
   background-size: cover;
   background-position: center;
   border-radius: 50%;
-  margin-left: 100px; 
+  margin-left: 100px;
   position: relative;
   cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+/* Animation styles */
+.profile-icon.animated {
+  /* Add animation styles here, for example, a box shadow and scaling */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease; /* Add a smooth transition effect */
 }
 
 .nav-links {
