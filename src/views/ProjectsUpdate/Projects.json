@@ -13,13 +13,13 @@
             "Deployed using Google Cloud Run"
         ],
         "Technologies": [
-            "REACT",
+            "React",
             "EXPRESS",
-            "MONGODB",
+            "MongoDB",
             "Firebase",
             "Docker",
-            "GCR",
-            "REDUX",
+            "Google Cloud Run",
+            "Redux",
             "STACK AI"
         ],
         "images": {
@@ -52,12 +52,12 @@
             "CRUD operations"
         ],
         "Technologies": [
-            "REACT",
+            "React",
             "EXPO",
             "NODE JS",
             "Firebase",
             "Typescript",
-            "REDUX"
+            "Redux"
         ],
         "images": {
                 "cover_image": "COLLECTIONS COVER",
@@ -84,13 +84,13 @@
         "Features": [
             "Responsive Design", 
             "Deployed using Firebase hosting",
-            "Implemented Google Cloud Function for sending email"
+            "Implemented Google Cloud Function for Contact Me message"
         ],
         "Technologies": [
-            "REACT",
+            "React",
             "Firebase",
             "NODE JS",
-            "GCP"
+            "Google Cloud Functions"
         ],
         "images": {
             "cover_image": "PORTFOLIO COVER",
@@ -120,7 +120,7 @@
             "CRUD Operations for Health Records"
         ],
         "Technologies": [
-            "KOTLIN",
+            "Kotlin",
             "JUnit4",
             "Mockk"
         ],
