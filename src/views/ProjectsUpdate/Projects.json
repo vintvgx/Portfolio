@@ -87,7 +87,7 @@
         "Features": [
             "Responsive Design", 
             "Deployed using Firebase hosting",
-            "Implemented Google Cloud Function for Contact Me message"
+            "Google Cloud Function implemented for messaging"
         ],
         "Technologies": [
             "React",
