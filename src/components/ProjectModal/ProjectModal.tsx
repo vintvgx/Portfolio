@@ -23,6 +23,9 @@ const ProjectModalView: React.FC<ModalProps> = ({
     console.log("MODAL");
   });
 
+  // Check if the project is "Collections" and append the message if it is
+  const isCollections = project.title === "COLLECTIONS";
+
   return (
     <div className={`modal-container ${className}`}>
       <div className="modal-header">
@@ -65,7 +68,18 @@ const ProjectModalView: React.FC<ModalProps> = ({
             <div className="icon-label-container">
               <TiWorld className="link-icon" />
               <span>Website</span>
+              {isCollections && (
+                <span
+                  style={{
+                    fontStyle: "italic",
+                    fontSize: "0.7em",
+                    color: "rgb(216,216,216)",
+                  }}>
+                  {`  (Download Expo Go from app store to launch application)`}
+                </span>
+              )}
             </div>
+
             <a
               href={project.website}
               target="_blank"

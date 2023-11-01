@@ -41,7 +41,7 @@ const AboutView: React.FC = () => {
               traveling within my community to capture its essence. My lens is
               not just focused on the visual, but on the stories and cultures I
               encounter along the way. This love for art and storytelling blends
-              with my goals as a software engineer...keeping the focus on the
+              with my goals as a software engineer by keeping the focus on the
               art and narratives that make us human.
             </p>
             {/* <p>

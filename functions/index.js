@@ -50,7 +50,7 @@ exports.sendEmailv2 = functions.https.onRequest(async (req, res) => {
   // Create the email message
   const mailOptions = {
     from: email,
-    to: "your-email@example.com",
+    to: "kareems0108@gmail.com",
     subject: `Contact Form Submission from ${name}`,
     text: message,
   };

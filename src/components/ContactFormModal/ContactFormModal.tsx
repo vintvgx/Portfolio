@@ -50,7 +50,7 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({
 
     setIsSending(false);
 
-    if (onClose) onClose();
+    // if (onClose) onClose();
   };
 
   return (

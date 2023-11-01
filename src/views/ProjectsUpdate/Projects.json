@@ -43,7 +43,7 @@
     {
         "title": "COLLECTIONS",
         "subtitle": "React Native",
-        "description": "COLLECTIONS is a dynamic React Native application designed for sharing media. Users can effortlessly share their cherished images and videos, creating a zine of memories. Navigate through a curated feed filled with shared moments, with the intuitive functionality of Create, Read, Update and Delete. From breathaking adventures to anyday snapshots, Collections is the styles for your stories.",
+        "description": "COLLECTIONS is a dynamic React Native application designed for sharing media. Users can effortlessly share their cherished images and videos, creating a collection of memories. Navigate through a curated feed filled with shared moments, with the intuitive functionality of Create, Read, Update and Delete. From breathaking adventures to anyday snapshots, Collections is the styles for your stories.",
         "website": "exp://u.expo.dev/update/819b8434-da84-47bb-b173-89145242c409",
         "github": "https://github.com/vintvgx/COLLECTIONS",
         "type": "Personal Project",
