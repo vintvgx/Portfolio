@@ -1,4 +1,5 @@
 import React from "react";
+import { AiOutlineFilePdf } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import "./Footer.css";
 
@@ -50,6 +51,9 @@ const Footer: React.FC<FooterTypes> = ({ className }) => {
           target="_blank"
           rel="noreferrer noopener">
           <FaTwitter className="icon" size={16} />
+        </a>
+        <a href="/RESUME.pdf" target="_blank" rel="noreferrer noopener">
+          <AiOutlineFilePdf className="icon" size={16} />
         </a>
       </div>
       <div className="rightSelection">
