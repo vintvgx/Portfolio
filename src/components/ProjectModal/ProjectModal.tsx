@@ -65,40 +65,37 @@ const ProjectModalView: React.FC<ModalProps> = ({
 
         <div className="links-container">
           <div className="link-item">
-            <div className="icon-label-container">
-              <TiWorld className="link-icon" />
-              <span>Website</span>
-              {isCollections && (
-                <span
-                  style={{
-                    fontStyle: "italic",
-                    fontSize: "0.7em",
-                    color: "rgb(216,216,216)",
-                  }}>
-                  {`  (Download Expo Go from app store to launch application)`}
-                </span>
-              )}
-            </div>
-
             <a
               href={project.website}
               target="_blank"
               rel="noopener noreferrer"
               className="actual-link">
-              {project.website}
+              <div className="icon-label-container">
+                <TiWorld className="link-icon" />
+                <span>Website</span>
+                {isCollections && (
+                  <span
+                    style={{
+                      fontStyle: "italic",
+                      fontSize: "0.7em",
+                      color: "rgb(193, 193, 193)",
+                    }}>
+                    {`  (EXPO GO app needed)`}
+                  </span>
+                )}
+              </div>
             </a>
           </div>
           <div className="link-item">
-            <div className="icon-label-container">
-              <AiFillGithub className="link-icon" />
-              <span>Github</span>
-            </div>
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="actual-link">
-              {project.github}
+              <div className="icon-label-container">
+                <AiFillGithub className="link-icon" />
+                <span>Github</span>
+              </div>
             </a>
           </div>
         </div>

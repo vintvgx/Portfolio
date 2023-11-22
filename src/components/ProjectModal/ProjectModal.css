@@ -135,33 +135,34 @@ color: white
 
   .links-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Display links in a row by default */
     gap: 10px; /* Adjust the gap between the links */
-    margin-top: 20px; /* Space from the Technologies section */
+    margin-top: 40px; /* Space from the Technologies section */
     margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
   }
   
   .link-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Display link items in a column by default */
     gap: 5px;
-    align-items: flex-start; 
   }
 
   .icon-label-container {
-    background-color: rgba(255, 255, 255, 0.1); /* Give a subtle background */
-    padding: 2px 10px; /* Internal padding for better spacing */
+    background-color: rgba(107, 107, 107, 0.874); /* Give a subtle background */
+    padding: 5px 35px; /* Internal padding for better spacing */
     border-radius: 5px; /* Rounded corners */
     align-items: center;
     gap: 5px;
     display: flex;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 /* For the text labels - Website & Github */
 .icon-label-container span {
     font-weight: bold; /* Make the text bold */
-    color: white; /* Make the text white for better contrast */
+    color: rgb(193, 193, 193);; /* Make the text white for better contrast */
 }
 
   
@@ -172,7 +173,7 @@ color: white
 
   .actual-link {
     text-decoration: none;
-    color: #aaa; /* Light gray color */
+    color: rgb(57, 57, 57); /* Light gray color */
     font-size: 0.8rem;
     display: block;
     overflow-wrap: break-word;
@@ -199,6 +200,14 @@ color: white
 
     .project-details img {
         max-width: 100%;  /* Image should not overflow the parent width */
+    }
+
+    .links-container {
+      flex-direction: column; /* Display links in a column on smaller screens */
+    }
+  
+    .link-item {
+      align-items: center; /* Center items in a column on smaller screens */
     }
     
   }
