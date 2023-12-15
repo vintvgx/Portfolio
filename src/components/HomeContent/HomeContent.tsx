@@ -13,7 +13,7 @@ const HomeContent: React.FC<HomeContentProps> = ({ className }) => {
           <h1>
             Hello
             <br />
-            I'm Kareem.
+            I'm Kareem!
           </h1>
         </div>
         <div className="description-section">
