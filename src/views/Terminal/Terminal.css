@@ -80,23 +80,32 @@
   .input-line {
     width: 100%;
     display: flex;
-    align-items: center;    
     text-align: left;
     align-self: center;
     justify-self: center;
     font-family: 'Courier New', Courier, monospace;
-
+    margin-top: 5px;
   }
   
+  .terminal-input {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #D5661C;
+    outline: none;
+    text-align: left;
+    width: 100%;
+    font-family: 'Raleway', sans-serif, monospace;
+
+  }
  
   
   .command-prompt {
     font-size: 14px;
-    width: 100px;
+    width: 92px;
     align-self: center;
     align-items: center;
     font-family: 'Courier New', Courier, monospace;
-
   }
 
   .command {
@@ -122,19 +131,17 @@
     text-align: left;
   }
 
+  .output p {
+    margin-top: 1.5px;
+    margin-bottom: 1.5px;
+  }
+
   .output-text {
     font-size: 14px;
     color: #fff;
   }
   
-  .terminal-input {
-    background: none;
-    border: none;
-    font-size: 14px;
-    color: #D5661C;
-    outline: none;
-    /* width: calc(100% - 30px);  */
-  }
+
 
   footer {
     font-size: 12px;
@@ -178,6 +185,10 @@
     .terminal-wrapper {
       width: 100%; /* Full width on small screens */
     }
+
+    .command-prompt {
+        width: 120px;
+    }
   
     .switch-view-button {
         position: absolute;
@@ -191,20 +202,20 @@
     }
   
     .terminal-header {
-      font-size: 1.5rem; /* Smaller header for mobile */
+      font-size: 2rem; /* Smaller header for mobile */
       position: relative;
     bottom: 25px;
-    font-weight: 100;
+    font-weight: 200;
     height: 20px;
     }
 
   
     .input-line, .command-prompt, .command, .output-text {
-      font-size: 12px; /* Smaller font size for mobile */
+      font-size: 16px; /* Smaller font size for mobile */
     }
   
     .terminal-input {
-      /* Adjust input size as needed */
+        font-size: 16px;
     }
   
     .terminal-footer {
