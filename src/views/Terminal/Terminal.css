@@ -46,11 +46,11 @@
   .terminal {
     background-color: transparent;
     display: flex;
-    border: 2px solid #454545;
     padding: 20px;
     width: 800px;
     height: 500px; 
     border-radius: 15px;
+    border: 2px solid #454545;
     overflow: auto;
     flex-direction: column;
     /* flex-direction: column-reverse; */
@@ -159,4 +159,57 @@
   
   .confetti-fade-out {
     animation: fadeOut 2s ease-in-out forwards;
+  }
+
+  @media (max-width: 800px) {
+    .terminal-container {
+      padding: 10px;
+      width: 100vw;
+    }
+  
+    .terminal {
+      width: 90%; /* Full width on small screens */
+      height: 80vh; /* Auto-adjust height */
+      padding: 10px;
+      border-radius: 0px;
+      border: 0px;
+    }
+  
+    .terminal-wrapper {
+      width: 100%; /* Full width on small screens */
+    }
+  
+    .switch-view-button {
+        position: absolute;
+      top: 5px;
+      right: 25px;
+      padding: 10px;
+    }
+  
+    .switch-view-button-text {
+      font-size: 12px; /* Smaller font size for mobile */
+    }
+  
+    .terminal-header {
+      font-size: 1.5rem; /* Smaller header for mobile */
+      position: relative;
+    bottom: 25px;
+    font-weight: 100;
+    height: 20px;
+    }
+
+  
+    .input-line, .command-prompt, .command, .output-text {
+      font-size: 12px; /* Smaller font size for mobile */
+    }
+  
+    .terminal-input {
+      /* Adjust input size as needed */
+    }
+  
+    .terminal-footer {
+      font-size: 10px; /* Smaller footer text for mobile */
+    }
+  
+    /* Any other mobile-specific styles... */
   }

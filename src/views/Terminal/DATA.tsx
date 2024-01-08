@@ -39,7 +39,7 @@ export const terminal_data = {
     </div>
   ),
   projects: (
-    <div style={{ width: "800px" }}>
+    <div>
       {/* <h3 style={{ textAlign: "center" }}>PROJECTS</h3> */}
       <div
         style={{
