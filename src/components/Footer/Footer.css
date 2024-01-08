@@ -5,8 +5,9 @@
     font-size: 0.8rem;
     width: 100%;
     font-family: Arial, sans-serif;
-    
     color: #666;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .leftSelection {

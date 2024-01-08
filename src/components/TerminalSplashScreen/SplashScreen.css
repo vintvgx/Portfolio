@@ -1,0 +1,43 @@
+.splash-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 5%);
+    z-index: 1;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.footer {
+    /* Add initial position for the Footer */
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+    /* Add other styles for the Footer */
+  }
+  
+  /* Add classes for animations */
+  .footer.fade-out {
+    transform: translateY(100%);
+  }
+  
+  .footer.fade-in {
+    transform: translateY(0);
+  }
+  
+
+@media only screen and (max-width: 768px) {
+    .hideName {
+        font-size: 1.2rem;
+    }
+    .hidePortfolio {
+        font-size: 1.2rem;
+    }
+}

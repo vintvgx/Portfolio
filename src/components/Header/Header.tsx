@@ -29,6 +29,11 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
     color: "rgba(145, 145, 145, 0.856)",
   };
 
+  const terminalNavStyle = {
+    color: " #D5661C",
+    backgroundColor: "transparent",
+  };
+
   const openModal = () => {
     setIsMobileMenuOpen(false); // Close mobile menu if open
     setIsModalOpen(true);
@@ -90,10 +95,10 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
 
       <div className="nav-links">
         <NavLink
-          to="/"
-          style={isActive("/") ? activeNavStyle : defaultNavStyle}
+          to="/Home"
+          style={isActive("/Home") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
-          {isActive("/") ? <BsDot className="dot" /> : "Home"}
+          {isActive("/Home") ? <BsDot className="dot" /> : "Home"}
         </NavLink>
         <NavLink
           to="/Projects"
@@ -106,6 +111,12 @@ const Header: React.FC<HeaderProps> = ({ className, backgroundColor }) => {
           style={isActive("/About") ? activeNavStyle : defaultNavStyle}
           className="nav-link">
           {isActive("/About") ? <BsDot /> : "About"}
+        </NavLink>
+        <NavLink
+          to="/"
+          style={isActive("/") ? activeNavStyle : terminalNavStyle}
+          className="nav-link terminal-text">
+          {isActive("/") ? <BsDot /> : "Terminal"}
         </NavLink>
         {isMobileView && (
           <span
