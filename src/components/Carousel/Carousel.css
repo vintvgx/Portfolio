@@ -32,9 +32,9 @@
     display: inline-block ;
 }
 
-.carousel:hover .logos-slide {
+/* .carousel:hover .logos-slide {
     animation-play-state: paused;
-}
+} */
 
 @keyframes slide {
     0% {

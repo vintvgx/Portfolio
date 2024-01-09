@@ -50,10 +50,6 @@ const Terminal: React.FC = () => {
   }, [history]);
 
   useEffect(() => {
-    console.log(history);
-  }, [history]);
-
-  useEffect(() => {
     let timer: string | number | NodeJS.Timeout | undefined;
     if (showConfetti) {
       // Set a timer to start fading out the confetti 2 seconds before the end
@@ -85,6 +81,7 @@ const Terminal: React.FC = () => {
 
   const processCommand = (command: string) => {
     const lowerCaseCommand = command.toLowerCase();
+    console.log(lowerCaseCommand);
 
     switch (lowerCaseCommand) {
       case "about":

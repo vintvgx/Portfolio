@@ -74,9 +74,7 @@ const Home: React.FC = () => {
                 opacity: "0",
               }}
               className={fadeInFooter ? "fade-in fade-in-delay-2" : ""}>
-              <Footer
-              // className={fadeInFooter ? "fade-in fade-in-delay-2" : ""}
-              />
+              <Footer />
             </div>
           </div>
         </>
