@@ -3,16 +3,26 @@ import { AiOutlineFilePdf } from "react-icons/ai";
 export const terminal_data = {
   about: (
     <div style={{ width: "100%" }}>
-      HI! I am Kareem Saygbe, a Junior Full Stack Engineer. Sttarted at DEKA
-      Research &
+      My name is Kareem. I am a full stack developer.
       <br />
-      Development, developing Python GUIs for medical devices. Passionate about
       <br />
-      blending technology and art, he's worked on projects like a MERN stack
+      I love coding in Javascript, Typescript, and Python, and have worked with
+      frameworks like ReactJS, Express, and Django. I have applied these
+      technologies in various projects, which you can view by inputting the
+      'projects' command.
       <br />
-      chatbot and a React Native social network app, reflecting my dedication
       <br />
-      to human-centric technology.
+      My professional journey includes experience at DEKA Research & Development
+      as a Junior Software Engineer, where I developed Python scripts for
+      testing a QNX embedded system and conducted both unit and automated
+      testing for an Android application designed to monitor the Remodulin pump.
+      <br />
+      <br />
+      My personal ambitions center around continuing to enhance my skills in
+      full stack programming. I aspire to contribute to a company where my
+      skills, particularly in React, can be further developed and utilized to
+      create impactful solutions.
+      <br />
     </div>
   ),
   education: (

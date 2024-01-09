@@ -172,36 +172,34 @@ const Terminal: React.FC = () => {
               Switch to Standard View
             </span>
           </div>
-          <div className="terminal-wrapper">
-            <div className="terminal">
-              <h1 className="terminal-header">Terminal</h1>
+          <div className="terminal">
+            <h1 className="terminal-header">Terminal</h1>
 
-              <div className="output" ref={outputRef}>
-                {history.map((item, index) => (
-                  <p key={index}>
-                    <span className="command-prompt">
-                      <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}{" "}
-                    </span>
-                    <span className="command">{item.command}</span>
-                    <br />
-                    <span className="output-text">{item.output}</span>
-                  </p>
-                ))}
-              </div>
-              <div className="input-line">
-                <span className="command-prompt">
-                  <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}
-                </span>
-                <input
-                  ref={inputRef}
-                  className="terminal-input"
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleInput}
-                  autoFocus
-                />
-              </div>
+            <div className="output" ref={outputRef}>
+              {history.map((item, index) => (
+                <p key={index}>
+                  <span className="command-prompt">
+                    <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}{" "}
+                  </span>
+                  <span className="command">{item.command}</span>
+                  <br />
+                  <span className="output-text">{item.output}</span>
+                </p>
+              ))}
+            </div>
+            <div className="input-line">
+              <span className="command-prompt">
+                <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}
+              </span>
+              <input
+                ref={inputRef}
+                className="terminal-input"
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleInput}
+                autoFocus
+              />
             </div>
           </div>
           <footer className="terminal-footer">
