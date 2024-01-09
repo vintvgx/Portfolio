@@ -8,13 +8,118 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh; 
-    background-color: hsl(0, 0%, 5%);
-    color: #fff;
+    /* background-color: hsl(0, 0%, 5%); */
+    /* color: #fff; */
     font-family: 'Raleway', sans-serif, monospace;
     overflow: hidden;
     position: fixed;
     width: 100vw;
   }
+
+  
+  /* 
+  *
+  *  DARK THEME STYLES
+  *
+  *
+  */
+
+
+
+.terminal-container.dark {
+  background-color: hsl(0, 0%, 5%);
+  color: #fff;
+}
+
+.terminal-container.dark .command, .terminal-container.dark .terminal-input, .terminal-container.dark .command-prompt-symbol {
+  color: #D5661C;
+}
+
+.terminal-container.dark .output-text {
+  color: #fff; /* White text for dark theme */
+}
+
+.terminal-container.dark .switch-view-button {
+  background-color: #2F190F; /* Dark background for button */
+  color: #D5661C; /* Text color for button */
+}
+
+.terminal-container.dark .switch-view-button-text {
+  color: #D5661C;
+}
+
+.terminal-container.dark .switch-view-button:hover {
+  background-color: #D5661C;
+  color: #2F190F;
+}
+
+
+ /* 
+  *
+  *  LIGHT THEME STYLES
+  *
+  *
+  */
+
+.terminal-container.light {
+  background-color: #fff; /* Light background */
+  color: #000; /* Dark text */
+}
+
+.terminal-container.light .command, .terminal-container.light .terminal-input, .terminal-container.light .command-prompt-symbol  {
+  color: #0056b3; /* Example: dark blue for better visibility */
+}
+
+.terminal-container.light .output-text {
+  color: black; /* Dark blue text for light theme */
+}
+
+.terminal-container.light .switch-view-button {
+  background-color: #fff; /* Light background for button */
+  color: #0056b3; /* Dark blue text color for button */
+  border: 2px solid #0056b3; /* Optional: border color to match text */
+}
+
+.terminal-container.light .switch-view-button-text {
+  color: #0056b3;
+}
+
+.terminal-container.light .switch-view-button:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+ /* 
+  *
+  *  MATRIX THEME STYLES
+  *
+  *
+  */
+.terminal-container.matrix {
+  background-color: black; /* Black background */
+  color: #0F0; /* Bright green text */
+}
+
+.terminal-container.matrix .command, 
+.terminal-container.matrix .terminal-input,
+.terminal-container.matrix .output-text,
+.terminal-container.matrix .command-prompt-symbol {
+  color: #0F0; /* Bright green text */
+}
+
+.terminal-container.matrix .switch-view-button {
+  background-color: #0F0; /* Bright green background for button */
+  color: black; /* Black text color for button */
+}
+
+.terminal-container.matrix .switch-view-button-text {
+  color: black;
+}
+
+.terminal-container.matrix .switch-view-button:hover {
+  background-color: black;
+  color: #0F0;
+}
 
     
   .switch-view-button {
@@ -26,20 +131,6 @@
     border-radius: 10px;
     cursor: pointer;
   }
-
-  .switch-view-button-text {
-    font-size: 14px;
-    color: #D5661C;
-  }
-
-  .switch-view-button:hover {
-    background-color: #D5661C;
-  }
-
-.switch-view-button:hover .switch-view-button-text {
-    color: #2F190F;
-}
-
   
   .terminal {
     background-color: transparent;
@@ -120,12 +211,8 @@
     margin-bottom: 1.5px;
   }
 
-  .output-text {
-    color: #fff;
-  }
   
-
-
+  
   footer {
     font-size: 12px;
     gap: 2px;
@@ -205,6 +292,4 @@
     .terminal-footer {
       font-size: 10px; /* Smaller footer text for mobile */
     }
-  
-    /* Any other mobile-specific styles... */
-  }
+    }
