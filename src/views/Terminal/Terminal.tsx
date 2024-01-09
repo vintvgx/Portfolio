@@ -16,6 +16,7 @@ const Terminal: React.FC = () => {
   const [showSplash, setShowSplash] = useState(true);
   const [showConfetti, setShowConfetti] = useState(false);
   const [fadeOutConfetti, setFadeOutConfetti] = useState(false);
+  const [theme, setTheme] = useState("dark");
 
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<HistoryItem[]>([
@@ -123,6 +124,23 @@ const Terminal: React.FC = () => {
               <span className="command-name">party</span>
               <span className="command-desc">🎉 Party time! 🎉</span>
             </div>
+
+            <br />
+
+            <div>
+              <span className="command-name">light</span>
+              <span className="command-desc">Light Theme</span>
+            </div>
+            <div>
+              <span className="command-name">dark</span>
+              <span className="command-desc">Dark Theme</span>
+            </div>
+            <div>
+              <span className="command-name">matrix</span>
+              <span className="command-desc">Matrix Theme</span>
+            </div>
+
+            <br />
             <div>
               <span className="command-name">clear</span>
               <span className="command-desc">Clear Terminal</span>
@@ -136,10 +154,19 @@ const Terminal: React.FC = () => {
             output: "",
           },
         ]);
-        return "hi"; // Return an empty string as output for the 'clear' command
+        return ""; // Return an empty string as output for the 'clear' command
       case "party":
         setShowConfetti(true);
         return "🎉 Party time! 🎉";
+      case "light":
+        setTheme("light");
+        return "Switched to light theme";
+      case "dark":
+        setTheme("dark");
+        return "Switched to dark theme";
+      case "matrix":
+        setTheme("matrix");
+        return "Switched to Matrix theme";
       default:
         return `sh: Unknown command: ${command}\nSee \`help\` for info`;
     }
@@ -147,7 +174,7 @@ const Terminal: React.FC = () => {
 
   return (
     <div
-      className="terminal-container"
+      className={`terminal-container ${theme}`}
       onClick={(e) => {
         inputRef.current?.focus();
       }}>
@@ -177,7 +204,7 @@ const Terminal: React.FC = () => {
               {history.map((item, index) => (
                 <p key={index}>
                   <span className="command-prompt">
-                    <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}{" "}
+                    <span className="command-prompt-symbol">λ</span> :: ~ {">>"}{" "}
                   </span>
                   <span className="command">{item.command}</span>
                   <br />
@@ -187,7 +214,7 @@ const Terminal: React.FC = () => {
             </div>
             <div className="input-line">
               <span className="command-prompt">
-                <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}
+                <span className="command-prompt-symbol">λ</span> :: ~ {">>"}
               </span>
               <input
                 ref={inputRef}
