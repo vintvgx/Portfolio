@@ -58,7 +58,7 @@ const Footer: React.FC<FooterTypes> = ({ className }) => {
       </div>
       <div className="rightSelection">
         Copyright
-        <br />© Kareem Saygbe 2023
+        <br />© Kareem Saygbe 2024
       </div>
     </footer>
   );

@@ -121,6 +121,14 @@ const Terminal: React.FC = () => {
               <span className="command-name">contact</span>{" "}
               <span className="command-desc">Contact Me</span>
             </div>
+            <div>
+              <span className="command-name">party</span>
+              <span className="command-desc">🎉 Party time! 🎉</span>
+            </div>
+            <div>
+              <span className="command-name">clear</span>
+              <span className="command-desc">Clear Terminal</span>
+            </div>
           </div>
         );
       case "clear":
