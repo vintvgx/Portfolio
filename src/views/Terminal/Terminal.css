@@ -155,11 +155,12 @@
     .terminal-container {
       padding: 10px;
       width: 100vw;
+      overflow: visible;
     }
   
     .terminal {
       width: 90%; /* Full width on small screens */
-      height: 80vh; /* Auto-adjust height */
+      height: 70vh; /* Auto-adjust height */
       padding: 10px;
       border-radius: 0px;
       border: 0px;
