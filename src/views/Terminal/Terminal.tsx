@@ -14,7 +14,18 @@ const Terminal: React.FC = () => {
   const navigate = useNavigate();
 
   const [showSplash, setShowSplash] = useState(true);
+
   const [showConfetti, setShowConfetti] = useState(false);
+  const darkThemeConfettiColors = [
+    "#a864fd",
+    "#29cdff",
+    "#78ff44",
+    "#ff718d",
+    "#fdff6a",
+  ];
+  const lightThemeConfettiColors = ["#f0f0f0", "#0056b3"];
+  const matrixThemeConfettiColors = ["#0F0"];
+
   const [fadeOutConfetti, setFadeOutConfetti] = useState(false);
   const [theme, setTheme] = useState("dark");
 
@@ -172,6 +183,18 @@ const Terminal: React.FC = () => {
     }
   };
 
+  const getConfettiColors = (theme: any) => {
+    switch (theme) {
+      case "light":
+        return lightThemeConfettiColors;
+      case "matrix":
+        return matrixThemeConfettiColors;
+      case "dark":
+      default:
+        return darkThemeConfettiColors;
+    }
+  };
+
   return (
     <div
       className={`terminal-container ${theme}`}
@@ -184,6 +207,7 @@ const Terminal: React.FC = () => {
         <>
           {showConfetti && (
             <ReactConfetti
+              colors={getConfettiColors(theme)}
               numberOfPieces={100}
               className={fadeOutConfetti ? "confetti-fade-out" : ""}
             />
