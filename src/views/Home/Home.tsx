@@ -52,7 +52,7 @@ const Home: React.FC = () => {
           {/* <Header className={fadeInHeader ? "fade-in" : ""} /> */}
           <Header className={fadeInHeader ? "fade-in" : ""} />
           <div style={{ flex: 1 }}>
-            {location.pathname === "/" && (
+            {location.pathname === "/Home" && (
               <>
                 <HomeContent
                   className={fadeInHomeContent ? "fade-in fade-in-delay-1" : ""}
@@ -71,10 +71,11 @@ const Home: React.FC = () => {
                 flexDirection: "column",
                 justifyContent: "flex-end",
                 height: "12vh",
+                opacity: "0",
               }}
               className={fadeInFooter ? "fade-in fade-in-delay-2" : ""}>
               <Footer
-                className={fadeInFooter ? "fade-in fade-in-delay-2" : ""}
+              // className={fadeInFooter ? "fade-in fade-in-delay-2" : ""}
               />
             </div>
           </div>

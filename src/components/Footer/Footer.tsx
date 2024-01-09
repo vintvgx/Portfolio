@@ -18,7 +18,7 @@ const footerStyles: React.CSSProperties = {
   alignItems: "center",
   // opacity: "0",
   backdropFilter: "blur(10px)",
-  zIndex: "-1",
+  // zIndex: "-1",
 };
 
 type FooterTypes = {

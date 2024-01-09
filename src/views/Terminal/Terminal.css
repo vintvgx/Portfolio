@@ -1,0 +1,226 @@
+/* Terminal.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+
+.terminal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background-color: hsl(0, 0%, 5%);
+    color: #fff;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Raleway', sans-serif, monospace;
+
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+  }
+
+    
+  .switch-view-button {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    padding: 15px;
+    background-color: #2F190F;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .switch-view-button-text {
+    font-size: 14px;
+    color: #D5661C;
+  }
+
+  .switch-view-button:hover {
+    background-color: #D5661C;
+  }
+
+.switch-view-button:hover .switch-view-button-text {
+    color: #2F190F;
+}
+
+  
+  .terminal {
+    background-color: transparent;
+    display: flex;
+    padding: 20px;
+    width: 800px;
+    height: 500px; 
+    border-radius: 15px;
+    border: 2px solid #454545;
+    overflow: auto;
+    flex-direction: column;
+    /* flex-direction: column-reverse; */
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* font-family: 'Raleway', sans-serif, monospace; */
+    /* font-family: 'Roboto Mono', monospace; */
+
+  }
+
+  /* .terminal-wrapper {
+    position: relative; 
+    width: 800px; 
+    height: 500px;  
+    display: flex; 
+     flex-direction: column;  } */
+
+  .terminal-header {
+    text-align: left;
+    /* margin-bottom: 10px; */
+    position: relative;
+    bottom: 35px;
+    font-weight: 100;
+    font-size: 2.5rem;
+    height: 10px;
+  }
+  
+  .input-line {
+    width: 100%;
+    display: flex;
+    text-align: left;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 5px;
+  }
+  
+  .terminal-input {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #D5661C;
+    outline: none;
+    text-align: left;
+    width: 100%;
+    font-family: 'Raleway', sans-serif, monospace;
+
+  }
+ 
+  
+  .command-prompt {
+    font-size: 14px;
+    width: 92px;
+    align-self: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .command {
+    font-size: 14px;
+    color: #D5661C;
+  }
+
+  .help-commands div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+  
+  .command-name {
+    margin-right: 10px; /* Adjust as needed for spacing */
+  }
+
+
+  .output {
+    flex-direction: column; 
+    overflow: auto; 
+    /* white-space: pre;  */
+    text-align: left;
+  }
+
+  .output p {
+    margin-top: 1.5px;
+    margin-bottom: 1.5px;
+  }
+
+  .output-text {
+    font-size: 14px;
+    color: #fff;
+  }
+  
+
+
+  footer {
+    font-size: 12px;
+    gap: 2px;
+    line-height: 20px;
+  }
+  
+  .terminal-footer {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 0;
+    color: #454545;
+  }
+  
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  .confetti-fade-out {
+    animation: fadeOut 2s ease-in-out forwards;
+  }
+
+  @media (max-width: 800px) {
+    .terminal-container {
+      padding: 10px;
+      width: 100vw;
+    }
+  
+    .terminal {
+      width: 90%; /* Full width on small screens */
+      height: 80vh; /* Auto-adjust height */
+      padding: 10px;
+      border-radius: 0px;
+      border: 0px;
+    }
+  
+    .terminal-wrapper {
+      width: 100%; /* Full width on small screens */
+    }
+
+    .command-prompt {
+        width: 120px;
+    }
+  
+    .switch-view-button {
+        position: absolute;
+      top: 5px;
+      right: 25px;
+      padding: 10px;
+    }
+  
+    .switch-view-button-text {
+      font-size: 12px; /* Smaller font size for mobile */
+    }
+  
+    .terminal-header {
+      font-size: 2rem; /* Smaller header for mobile */
+      position: relative;
+    bottom: 25px;
+    font-weight: 200;
+    height: 20px;
+    }
+
+  
+    .input-line, .command-prompt, .command, .output-text {
+      font-size: 16px; /* Smaller font size for mobile */
+    }
+  
+    .terminal-input {
+        font-size: 16px;
+    }
+  
+    .terminal-footer {
+      font-size: 10px; /* Smaller footer text for mobile */
+    }
+  
+    /* Any other mobile-specific styles... */
+  }
