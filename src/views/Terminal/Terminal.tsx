@@ -84,7 +84,9 @@ const Terminal: React.FC = () => {
   };
 
   const processCommand = (command: string) => {
-    switch (command.toLowerCase()) {
+    const lowerCaseCommand = command.toLowerCase();
+
+    switch (lowerCaseCommand) {
       case "about":
       case "education":
       case "skills":
@@ -92,7 +94,7 @@ const Terminal: React.FC = () => {
       case "resume":
       case "experience":
       case "contact":
-        return terminal_data[command as keyof typeof terminal_data];
+        return terminal_data[lowerCaseCommand as keyof typeof terminal_data];
       case "help":
         return (
           <div className="help-commands">
