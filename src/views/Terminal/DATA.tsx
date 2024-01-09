@@ -1,24 +1,75 @@
+import { AiOutlineFilePdf } from "react-icons/ai";
+
 export const terminal_data = {
   about: (
     <div style={{ width: "100%" }}>
-      HI! I am Kareem Saygbe, a Junior Full Stack Engineer. Sttarted at DEKA
-      Research &
+      My name is Kareem. I am a full stack developer.
       <br />
-      Development, developing Python GUIs for medical devices. Passionate about
       <br />
-      blending technology and art, he's worked on projects like a MERN stack
+      I love coding in Javascript, Typescript, and Python, and have worked with
+      frameworks like ReactJS, Express, and Django. I have applied these
+      technologies in various projects, which you can view by inputting the
+      'projects' command.
       <br />
-      chatbot and a React Native social network app, reflecting my dedication
       <br />
-      to human-centric technology.
+      My professional journey includes experience at DEKA Research & Development
+      as a Junior Software Engineer, where I developed Python scripts for
+      testing a QNX embedded system and conducted both unit and automated
+      testing for an Android application designed to monitor the Remodulin pump.
+      <br />
+      <br />
+      My personal ambitions center around continuing to enhance my skills in
+      full stack programming. I aspire to contribute to a company where my
+      skills, particularly in React, can be further developed and utilized to
+      create impactful solutions.
+      <br />
     </div>
   ),
   education: (
-    <div>
-      Associates, Northern Essex Community College (Jan 2015 — Dec 2018)
-      <br />
-      Bachelors, University of Massachusetts Lowell (Jan 2019 — Dec 2021)
-      <br />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "10px",
+      }}>
+      {/* Card for Northern Essex Community College */}
+      <div
+        style={{
+          border: "2px solid #454545",
+          borderRadius: "10px",
+          padding: "15px",
+          textAlign: "center",
+          width: "100%",
+          boxSizing: "border-box",
+          backgroundColor: "rgba(82, 81, 81, 0.578)",
+        }}>
+        <h3>Northern Essex Community College</h3>
+        <p>
+          Associates Degree
+          <br />
+          Jan 2015 — Dec 2018
+        </p>
+      </div>
+
+      {/* Card for University of Massachusetts Lowell */}
+      <div
+        style={{
+          border: "2px solid #454545",
+          borderRadius: "10px",
+          padding: "15px",
+          textAlign: "center",
+          width: "100%",
+          boxSizing: "border-box",
+          backgroundColor: "rgba(82, 81, 81, 0.578)",
+        }}>
+        <h3>University of Massachusetts Lowell</h3>
+        <p>
+          Bachelor's Degree
+          <br />
+          Jan 2019 — Dec 2021
+        </p>
+      </div>
     </div>
   ),
   skills: (
@@ -202,17 +253,60 @@ export const terminal_data = {
   ),
   resume: (
     <div>
-      <h3>RESUME</h3>
-      <p>Link to download resume...</p>
+      <div
+        style={{
+          cursor: "pointer",
+          textDecoration: "none",
+          color: "#D5661C",
+          border: "2px solid #454545",
+          margin: "5px",
+          padding: "10px",
+          textAlign: "center",
+          transition: "background-color 0.3s ease",
+          display: "inline-block", // This makes the div behave like a button
+        }}
+        onClick={() => window.open("/RESUME.pdf", "_blank")}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = "#333333"; // Darken background on hover
+          e.currentTarget.style.color = "#FFFFFF"; // Change text color on hover
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = "transparent"; // Revert background color
+          e.currentTarget.style.color = "#D5661C"; // Revert text color
+        }}>
+        Download My Resume
+      </div>
     </div>
   ),
   contact: (
-    <div>
-      <h3>CONTACT</h3>
-      <p>ADDRESS: Boston, MA United States</p>
-      <p>PHONE: (978) 305-5958</p>
-      <p>EMAIL: Kareems0108@gmail.com</p>
-      <p>LINKS: LinkedIn, Github, Portfolio</p>
+    <div className="help-commands">
+      <div>
+        <span className="command-name">Email</span>
+        <a
+          href="mailto:kareems0108@gmail.com"
+          target="_blank"
+          rel="noreferrer noopener">
+          kareems0108@gmail.com
+        </a>
+      </div>
+      <div>
+        <span className="command-name">LinkedIn</span>
+        <a
+          href="https://www.linkedin.com/in/kareem-saygbe-63b82a1b4/"
+          target="_blank"
+          rel="noreferrer noopener">
+          kareemsaygbe
+        </a>
+      </div>
+      <div>
+        <span className="command-name">Github</span>
+        <a
+          href="https://github.com/vintvgx?tab=overview&from=2023-10-01&to=2023-10-25"
+          target="_blank"
+          rel="noreferrer noopener">
+          vintvgx
+        </a>
+      </div>
     </div>
   ),
   profile: (

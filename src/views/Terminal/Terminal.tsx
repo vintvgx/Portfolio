@@ -121,6 +121,14 @@ const Terminal: React.FC = () => {
               <span className="command-name">contact</span>{" "}
               <span className="command-desc">Contact Me</span>
             </div>
+            <div>
+              <span className="command-name">party</span>
+              <span className="command-desc">🎉 Party time! 🎉</span>
+            </div>
+            <div>
+              <span className="command-name">clear</span>
+              <span className="command-desc">Clear Terminal</span>
+            </div>
           </div>
         );
       case "clear":
@@ -164,42 +172,40 @@ const Terminal: React.FC = () => {
               Switch to Standard View
             </span>
           </div>
-          <div className="terminal-wrapper">
-            <div className="terminal">
-              <h1 className="terminal-header">Terminal</h1>
+          <div className="terminal">
+            <h1 className="terminal-header">Terminal</h1>
 
-              <div className="output" ref={outputRef}>
-                {history.map((item, index) => (
-                  <p key={index}>
-                    <span className="command-prompt">
-                      <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}{" "}
-                    </span>
-                    <span className="command">{item.command}</span>
-                    <br />
-                    <span className="output-text">{item.output}</span>
-                  </p>
-                ))}
-              </div>
-              <div className="input-line">
-                <span className="command-prompt">
-                  <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}
-                </span>
-                <input
-                  ref={inputRef}
-                  className="terminal-input"
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleInput}
-                  autoFocus
-                />
-              </div>
+            <div className="output" ref={outputRef}>
+              {history.map((item, index) => (
+                <p key={index}>
+                  <span className="command-prompt">
+                    <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}{" "}
+                  </span>
+                  <span className="command">{item.command}</span>
+                  <br />
+                  <span className="output-text">{item.output}</span>
+                </p>
+              ))}
+            </div>
+            <div className="input-line">
+              <span className="command-prompt">
+                <span style={{ color: "#D5661C" }}>λ</span> :: ~ {">>"}
+              </span>
+              <input
+                ref={inputRef}
+                className="terminal-input"
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleInput}
+                autoFocus
+              />
             </div>
           </div>
           <footer className="terminal-footer">
-            Welcome to the Terminal Portfolio of Kareem Saygbe.
-            <br /> Designed & Coded by Kareem Saygbe.
-            <br />© Kareem Saygbe 2024
+            Welcome to my Terminal Portfolio.
+            <br /> Designed & Coded with ❤️ by Kareem Saygbe.
+            <br />© 2024 Kareem Saygbe. All rights reserved.
           </footer>
         </>
       )}
