@@ -1,5 +1,3 @@
-import { AiOutlineFilePdf } from "react-icons/ai";
-
 export const terminal_data = {
   about: (
     <div style={{ width: "100%" }}>
