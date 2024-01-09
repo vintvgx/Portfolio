@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import SplashScreen from "../../components/SplashScreen/SplashScreen";
 import { terminal_data } from "./DATA";
 import "./Terminal.css";
 import { useNavigate } from "react-router-dom";
