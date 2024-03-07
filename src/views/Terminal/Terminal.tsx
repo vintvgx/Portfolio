@@ -4,6 +4,7 @@ import "./Terminal.css";
 import { useNavigate } from "react-router-dom";
 import TerminalSplashScreen from "../../components/TerminalSplashScreen/TerminalSplashScreen";
 import ReactConfetti from "react-confetti";
+import * as Sentry from "@sentry/react";
 
 interface HistoryItem {
   command: string;
@@ -76,6 +77,10 @@ const Terminal: React.FC = () => {
     }
   }, [showConfetti]);
 
+  useEffect(() => {
+    Sentry.captureMessage("Terminal Page Loaded");
+  }, []);
+
   const handleInput = (event: { key: string }) => {
     if (event.key === "Enter") {
       if (input.toLowerCase() === "clear") {
@@ -94,6 +99,15 @@ const Terminal: React.FC = () => {
   const processCommand = (command: string) => {
     const lowerCaseCommand = command.toLowerCase();
     console.log(lowerCaseCommand);
+
+    Sentry.captureMessage(`Terminal Command: ${lowerCaseCommand}`);
+
+    Sentry.captureMessage(`Terminal Command:`, {
+      level: "info", // Optional, specify the level of the message
+      extra: {
+        command: lowerCaseCommand, // Include the user object here
+      },
+    });
 
     switch (lowerCaseCommand) {
       case "about":
