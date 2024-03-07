@@ -5,8 +5,8 @@ import Home from "./views/Home/Home";
 import Terminal from "./views/Terminal/Terminal";
 import ReactGA from "react-ga";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TemplateScreen from "./views/4.0/Template";
-import TwoTemplateScreen from "./views/4.0/TwoTemplateScreen";
+// import TemplateScreen from "./views/4.0/Template";
+// import TwoTemplateScreen from "./views/4.0/TwoTemplateScreen";
 
 ReactGA.initialize("G-DH38G3QNMP");
 
@@ -24,8 +24,8 @@ const App: React.FC = () => {
       <BrowserRouter>
         <TrackPageView /> {/* Call TrackPageView to track page views */}
         <Routes>
-          <Route path="/" element={<TemplateScreen />} />
-          <Route path="/two-template" element={<TwoTemplateScreen />} />
+          <Route path="/" element={<Terminal />} />
+          <Route path="/two-template" element={<Home />} />
           {/* <Route path="/" element={<Terminal />} />
           <Route path="/*" element={<Home />} /> */}
         </Routes>
