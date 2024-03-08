@@ -78,7 +78,31 @@ const Terminal: React.FC = () => {
   }, [showConfetti]);
 
   useEffect(() => {
-    Sentry.captureMessage("Terminal Page Loaded");
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const userLocation = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          };
+          Sentry.captureMessage("Terminal Page Loaded", {
+            level: "info",
+            extra: { userLocation },
+          });
+        },
+        (error) => {
+          Sentry.captureMessage(
+            "Terminal Page Loaded - Location access denied",
+            {
+              level: "info",
+              extra: { error: error.message },
+            }
+          );
+        }
+      );
+    } else {
+      Sentry.captureMessage("Terminal Page Loaded - Geolocation not supported");
+    }
   }, []);
 
   const handleInput = (event: { key: string }) => {
@@ -103,9 +127,9 @@ const Terminal: React.FC = () => {
     Sentry.captureMessage(`Terminal Command: ${lowerCaseCommand}`);
 
     Sentry.captureMessage(`Terminal Command:`, {
-      level: "info", // Optional, specify the level of the message
+      level: "info",
       extra: {
-        command: lowerCaseCommand, // Include the user object here
+        command: lowerCaseCommand,
       },
     });
 
