@@ -9,6 +9,7 @@ ReactGA.initialize("G-DH38G3QNMP");
 
 const TrackPageView = () => {
   const location = useLocation();
+  console.log("🚀 ~ TrackPageView ~ location:", location);
   useEffect(() => {
     ReactGA.pageview(location.pathname + location.search);
   }, [location]);
