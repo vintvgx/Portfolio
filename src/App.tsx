@@ -26,9 +26,7 @@ const App: React.FC = () => {
         <TrackPageView />
         <Routes>
           <Route path="/" element={<Terminal />} />
-          <Route path="/two-template" element={<Home />} />
-          {/* <Route path="/" element={<Terminal />} />
-          <Route path="/*" element={<Home />} /> */}
+          <Route path="/*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
