@@ -4,6 +4,7 @@ import "./Terminal.css";
 import { useNavigate } from "react-router-dom";
 import TerminalSplashScreen from "../../components/TerminalSplashScreen/TerminalSplashScreen";
 import ReactConfetti from "react-confetti";
+import * as Sentry from "@sentry/react";
 
 interface HistoryItem {
   command: string;
@@ -76,6 +77,34 @@ const Terminal: React.FC = () => {
     }
   }, [showConfetti]);
 
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const userLocation = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          };
+          Sentry.captureMessage("Terminal Page Loaded", {
+            level: "info",
+            extra: { userLocation },
+          });
+        },
+        (error) => {
+          Sentry.captureMessage(
+            "Terminal Page Loaded - Location access denied",
+            {
+              level: "info",
+              extra: { error: error.message },
+            }
+          );
+        }
+      );
+    } else {
+      Sentry.captureMessage("Terminal Page Loaded - Geolocation not supported");
+    }
+  }, []);
+
   const handleInput = (event: { key: string }) => {
     if (event.key === "Enter") {
       if (input.toLowerCase() === "clear") {
@@ -94,6 +123,15 @@ const Terminal: React.FC = () => {
   const processCommand = (command: string) => {
     const lowerCaseCommand = command.toLowerCase();
     console.log(lowerCaseCommand);
+
+    Sentry.captureMessage(`Terminal Command: ${lowerCaseCommand}`);
+
+    Sentry.captureMessage(`Terminal Command:`, {
+      level: "info",
+      extra: {
+        command: lowerCaseCommand,
+      },
+    });
 
     switch (lowerCaseCommand) {
       case "about":
