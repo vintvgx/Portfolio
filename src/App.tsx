@@ -22,7 +22,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <TrackPageView /> {/* Call TrackPageView to track page views */}
+        <TrackPageView />
         <Routes>
           <Route path="/" element={<Terminal />} />
           <Route path="/two-template" element={<Home />} />
