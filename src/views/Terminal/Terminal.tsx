@@ -124,8 +124,8 @@ const Terminal: React.FC = () => {
     const lowerCaseCommand = command.toLowerCase();
     console.log(lowerCaseCommand);
 
-    if (lowerCaseCommand !== "") {
-      Sentry.captureMessage(`Terminal Command:`, {
+    if (lowerCaseCommand.trim() !== "") {
+      Sentry.captureMessage(`Terminal Command: ${lowerCaseCommand}`, {
         level: "info",
         extra: {
           command: lowerCaseCommand,
