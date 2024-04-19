@@ -285,8 +285,8 @@ const Terminal: React.FC = () => {
             </div>
           </div>
           <footer className="terminal-footer">
-            Welcome to my Terminal Portfolio.
-            <br /> Designed & Coded with ❤️ by Kareem Saygbe.
+            Terminal Portfolio.
+            <br /> Designed & Coded by Kareem Saygbe.
             <br />© 2024 Kareem Saygbe. All rights reserved.
           </footer>
         </>
