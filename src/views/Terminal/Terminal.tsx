@@ -78,31 +78,26 @@ const Terminal: React.FC = () => {
   }, [showConfetti]);
 
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const userLocation = {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          };
-          Sentry.captureMessage("Terminal Page Loaded", {
-            level: "info",
-            extra: { userLocation },
-          });
+    const startTime = Date.now();
+
+    // Log browser and device details
+    Sentry.captureMessage("Terminal Page Device Details", {
+      level: "info",
+      extra: {
+        userAgent: navigator.userAgent,
+        screenResolution: `${window.screen.width}x${window.screen.height}`,
+      },
+    });
+
+    return () => {
+      const duration = Date.now() - startTime;
+      Sentry.captureMessage("Terminal Page Session Duration", {
+        level: "info",
+        extra: {
+          durationSeconds: Math.floor(duration / 1000),
         },
-        (error) => {
-          Sentry.captureMessage(
-            "Terminal Page Loaded - Location access denied",
-            {
-              level: "info",
-              extra: { error: error.message },
-            }
-          );
-        }
-      );
-    } else {
-      Sentry.captureMessage("Terminal Page Loaded - Geolocation not supported");
-    }
+      });
+    };
   }, []);
 
   const handleInput = (event: { key: string }) => {
