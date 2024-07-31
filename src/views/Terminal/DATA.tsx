@@ -249,33 +249,6 @@ export const terminal_data = {
       </div>
     </div>
   ),
-  resume: (
-    <div>
-      <div
-        style={{
-          cursor: "pointer",
-          textDecoration: "none",
-          color: "#D5661C",
-          border: "2px solid #454545",
-          margin: "5px",
-          padding: "10px",
-          textAlign: "center",
-          transition: "background-color 0.3s ease",
-          display: "inline-block", // This makes the div behave like a button
-        }}
-        onClick={() => window.open("/RESUME.pdf", "_blank")}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = "#333333"; // Darken background on hover
-          e.currentTarget.style.color = "#FFFFFF"; // Change text color on hover
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = "transparent"; // Revert background color
-          e.currentTarget.style.color = "#D5661C"; // Revert text color
-        }}>
-        Download My Resume
-      </div>
-    </div>
-  ),
   contact: (
     <div className="help-commands">
       <div>
@@ -299,7 +272,7 @@ export const terminal_data = {
       <div>
         <span className="command-name">Github</span>
         <a
-          href="https://github.com/vintvgx?tab=overview&from=2023-10-01&to=2023-10-25"
+          href="https://github.com/vintvgx"
           target="_blank"
           rel="noreferrer noopener">
           vintvgx

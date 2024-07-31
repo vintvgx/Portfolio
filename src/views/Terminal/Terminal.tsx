@@ -81,7 +81,7 @@ const Terminal: React.FC = () => {
     const startTime = Date.now();
 
     // Log browser and device details
-    Sentry.captureMessage("Terminal Page Device Details", {
+    Sentry.captureMessage("Terminal Page Accessed", {
       level: "info",
       extra: {
         userAgent: navigator.userAgent,
@@ -133,7 +133,6 @@ const Terminal: React.FC = () => {
       case "education":
       case "skills":
       case "projects":
-      case "resume":
       case "experience":
       case "contact":
         return terminal_data[lowerCaseCommand as keyof typeof terminal_data];
@@ -155,10 +154,6 @@ const Terminal: React.FC = () => {
             <div>
               <span className="command-name">projects</span>{" "}
               <span className="command-desc">My Tech Projects</span>
-            </div>
-            <div>
-              <span className="command-name">resume</span>{" "}
-              <span className="command-desc">My Resume</span>
             </div>
             <div>
               <span className="command-name">contact</span>{" "}
