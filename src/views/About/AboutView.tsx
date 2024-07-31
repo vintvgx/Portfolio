@@ -11,18 +11,14 @@ const AboutView: React.FC = () => {
         <div className="right-column">
           <div className="about-content">
             <p>
-              My name is Kareem Saygbe, a Junior Full Stack Engineer with a
-              passion for technology and art. I started my professional journey
-              at DEKA Research & Development, an organization dedicated to
-              innovating health devices. My work at DEKA involved developing
-              GUIs in Python, primarily focusing on testing the functionality of
-              FDA-approved medical devices. Specifically, I was responsible for
-              ensuring the performance and reliability of the battery component
-              of a QNX embedded system. Additionally, I played a key role in
-              providing unit and automation testing for a Kotlin Android
-              application designed for a Remodulin medical device. This
-              experience laid a strong foundation for my career in full-stack
-              engineering.
+              My name is Kareem Saygbe, a Full Stack Engineer with a passion for
+              technology and art. I started my professional journey at DEKA
+              Research & Development, an organization dedicated to innovating
+              health devices. My work at DEKA involved developing GUIs in
+              Python, primarily focusing on testing the functionality of
+              FDA-approved medical devices, as well as providing development,
+              unit and automation testing for a Kotlin Android application
+              designed for a Remodulin medical device.
             </p>
             <p>
               In my pursuit of becoming an experienced full-stack engineer, I've
