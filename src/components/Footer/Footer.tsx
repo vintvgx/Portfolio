@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineFilePdf } from "react-icons/ai";
+// import { AiOutlineFilePdf } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import "./Footer.css";
 
