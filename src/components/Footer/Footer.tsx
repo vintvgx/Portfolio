@@ -52,9 +52,9 @@ const Footer: React.FC<FooterTypes> = ({ className }) => {
           rel="noreferrer noopener">
           <FaTwitter className="icon" size={16} />
         </a>
-        <a href="/RESUME.pdf" target="_blank" rel="noreferrer noopener">
+        {/* <a href="/RESUME.pdf" target="_blank" rel="noreferrer noopener">
           <AiOutlineFilePdf className="icon" size={16} />
-        </a>
+        </a> */}
       </div>
       <div className="rightSelection">
         Copyright
